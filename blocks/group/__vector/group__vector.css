@@ -1,0 +1,15 @@
+.group__vector {
+    max-width: 22px;
+    min-height: 19px;
+    position: absolute;
+    z-index: 2;
+    margin: 312px 20px 30px 240px;
+}
+
+.group__vector:hover {
+    opacity: 0.5;
+}
+
+.group__vector:active {
+    background: #000000;
+}

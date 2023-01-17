@@ -1,0 +1,32 @@
+.popup__name {
+    position: absolute;
+    max-width: 238px;
+    min-height: 27px;
+    z-index: 4;
+    padding: 0px;
+    margin: 118px 22px 186px 22px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__name {
+        max-width: 358px;
+        margin: 111px auto 205px;
+    }
+    }
+
+@media screen and (min-width: 1280px) {
+    .popup__name {
+        margin: 111px 36px 205px 36px;
+    }
+    }

@@ -1,0 +1,36 @@
+.add__button-rectangle {
+    max-width: 282px;
+    min-height: 50px;
+    background-color: inherit;
+    border: 1px solid #fff;
+    padding: 0px;
+    margin: 0px;
+}
+
+@media screen and (min-width: 321px) {
+    .add__button-rectangle {
+        max-width: 296px;
+        margin: 0px auto;
+    }
+    }
+
+@media screen and (min-width: 768px) {
+    .add__button-rectangle {
+        max-width: 100px;
+        margin: 35px 0px 35px 0px;
+    }
+    }
+
+@media screen and (min-width: 1024px) {
+    .add__button-rectangle {
+        max-width: 150px;
+        margin: 35px 0px 35px 0px;
+    }
+    }
+
+@media screen and (min-width: 1280px) {
+    .add__button-rectangle {
+        max-width: 150px;
+        margin: 35px 0px 35px 0px;
+    }
+    }

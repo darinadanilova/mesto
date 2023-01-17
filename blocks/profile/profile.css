@@ -1,0 +1,35 @@
+.profile {
+    max-width: 282px;
+    min-height: 286px;
+    margin: 0px 19px 36px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 321px) {
+    .profile {
+      min-height: 240px;
+      margin: 0px auto 36px;
+    }
+    }
+
+@media screen and (min-width: 768px) {
+    .profile {
+      display: flex;
+      flex-direction: row;
+      max-width: 660px;
+      min-height: 200px;
+      margin: 0px auto 40px;
+    }
+    }
+
+@media screen and (min-width: 888px) {
+    .profile {
+      max-width: 880px;
+      min-height: 120px;
+      margin: 0px auto 51px;
+    }
+    }

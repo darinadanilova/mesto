@@ -1,0 +1,42 @@
+.profile__subtitle {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    align-self: center;
+    color: #FFFFFF;
+    padding-left: 46px;
+    margin: 0px;
+}
+
+@media screen and (min-width: 540px) {
+    .profile__subtitle {
+        font-size: 15px;
+        line-height: 18px;
+        padding-left: 40px;
+    }
+    }
+
+@media screen and (min-width: 768px) {
+    .profile__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 0px;
+    }
+    }
+
+@media screen and (min-width: 1024px) {
+    .profile__subtitle {
+        font-size: 17px;
+        line-height: 21px;
+    }
+    }
+
+@media screen and (min-width: 1280px) {
+    .profile__subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    }

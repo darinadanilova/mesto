@@ -1,0 +1,8 @@
+.add {
+    margin: 36px 0px 0px 0px;
+    padding: 0px;
+}
+
+.add:hover {
+    opacity: 0.6;
+}

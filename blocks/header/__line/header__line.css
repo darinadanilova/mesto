@@ -1,0 +1,12 @@
+.header__line {
+    max-width: 100%;
+    min-height: 1px;
+    padding: 0px;
+    margin: 0px;
+}
+
+@media screen and (min-width: 888px) {
+    .header__line {
+      max-width: 880px;
+    }
+    }

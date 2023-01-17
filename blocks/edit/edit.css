@@ -1,0 +1,8 @@
+.edit {
+    padding: 0px;
+    margin: 0px;
+}
+
+.edit:hover {
+    opacity: 0.6;
+}
