@@ -1,7 +1,11 @@
 .element {
+    background-color: #fff;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 215px 67px;
+    grid-template-rows: 282px 79px;
     max-width: 282px;
-    min-height: 361px;
     margin: 0px;
     padding: 0px;
-    position: relative;
+    z-index: 1;
 }

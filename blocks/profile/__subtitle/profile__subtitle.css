@@ -9,6 +9,9 @@
     color: #FFFFFF;
     padding-left: 46px;
     margin: 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 540px) {
@@ -38,5 +41,6 @@
     .profile__subtitle {
         font-size: 18px;
         line-height: 22px;
+        padding-right: 90px;
     }
     }

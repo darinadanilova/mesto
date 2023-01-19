@@ -1,6 +1,5 @@
 .header {
     max-width: 320px;
-    min-height: 56px;
     display: flex;
     flex-direction: column;
     margin: 28px 0px 42px 0px;
@@ -19,7 +18,6 @@
 @media screen and (min-width: 888px) {
   .header {
     max-width: 880px;
-    min-height: 74px;
     margin: 45px auto 40px;
   }
   }

@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 20px;
     max-width: 282px;
-    min-height: 2268px;
     margin: 0px 19px 48px 19px;
     padding: 0px;
 }
@@ -17,7 +16,6 @@
 @media screen and (min-width: 590px) {
     .groups {
        max-width: 584px;
-       min-height: 1130px;
        display: grid;
        grid-template-columns: 282px 282px;
        gap: 20px;
@@ -28,7 +26,6 @@
 @media screen and (min-width: 888px) {
     .groups {
        max-width: 880px;
-       min-height: 744px;
        display: grid;
        grid-template-columns: 282px 282px 282px;
        row-gap: 20px;

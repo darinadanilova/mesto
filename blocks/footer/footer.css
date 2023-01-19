@@ -1,6 +1,5 @@
 .footer {
     max-width: 282px;
-    min-height: 14px;
     margin: 0px auto 36px;
     padding: 0px;
     justify-self: flex-start;
@@ -9,7 +8,6 @@
 @media screen and (min-width: 590px) {
     .footer {
         max-width: 584px;
-        min-height: 15px;
         margin: 0px auto 36px;
         justify-self: flex-start;
     }
@@ -18,7 +16,6 @@
 @media screen and (min-width: 888px) {
     .footer {
         max-width: 880px;
-        min-height: 17px;
         margin: 0px auto 60px;
         justify-self: flex-start;
     }

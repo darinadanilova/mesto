@@ -1,0 +1,18 @@
+.popup__inform {
+    padding: 118px 0px 0px 22px;
+    margin: 0px;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__inform {
+        padding: 0px 0px 0px 22px;
+        margin: 0px;
+    }
+    }
+
+@media screen and (min-width: 1280px) {
+    .popup__inform {
+        padding: 0px;
+    }
+    }

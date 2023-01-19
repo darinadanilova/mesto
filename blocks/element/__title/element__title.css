@@ -1,6 +1,7 @@
 .element__title {
+    grid-row: 2/3;
+    grid-column: 1/2;
     max-width: 246px;
-    min-height: 23px;
     z-index: 2;
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
@@ -8,7 +9,6 @@
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-    position: absolute;
-    margin: 307px 15px 31px 21px;
+    margin: 25px 15px 31px 21px;
     padding: 0px;
 }

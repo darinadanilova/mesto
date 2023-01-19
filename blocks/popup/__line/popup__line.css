@@ -1,7 +1,8 @@
 .popup__line {
     position: absolute;
     max-width: 238px;
-    min-height: 1px;
+    opacity: 0.2;
+    border: 1px solid #000000;
     z-index: 4;
     padding: 0px;
     margin: 206px 22px 116px 22px;

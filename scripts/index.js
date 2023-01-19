@@ -1,6 +1,6 @@
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = document.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.edit__button');
+const popupOpenButtonElement = document.querySelector('.edit');
 const popupSaveButtonElement = document.querySelector('.popup__button');
 let nameInput = document.querySelector('.popup__name');
 let jobInput = document.querySelector('.popup__profession');
@@ -11,14 +11,14 @@ let jobProfile = document.querySelector('.profile__subtitle');
 //Открытие попапа через кнопку редактирования:
 
 const openPopup = function(event) {
-    popupElement.classList.add('popup_opened');
+    popupElement.classList.add('popup_is_opened');
     console.log('Open popup clicked');
  }
 
  //Закрытие попапа через крестик:
 
  const closePopup = function() {
-    popupElement.classList.remove('popup_opened');
+    popupElement.classList.remove('popup_is_opened');
  }
 
  //Закрытие попапа через кнопку "Сохранить" с сохранением измененных данных:
@@ -26,7 +26,7 @@ const openPopup = function(event) {
  const savePopup = function() {
     nameProfile.textContent = nameInput.value;
     jobProfile.textContent = jobInput.value;
-    popupElement.classList.remove('popup_opened');
+    popupElement.classList.remove('popup_is_opened');
  }
 
 popupOpenButtonElement.addEventListener('click', openPopup);
@@ -51,4 +51,5 @@ function handleFormSubmit (evt) {
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit);
+//formElement.addEventListener('submit', handleFormSubmit);
+

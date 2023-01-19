@@ -12,7 +12,8 @@
        <!-- HEADER -->
        <header class="header">
         <img class="header__logo" src="./images/logo_header.svg" alt= "Лого Mesto Russia">
-        <img class="header__line" src="./images/line_header.svg" alt= "Линия под логотипом">
+        <div class="header__line">
+        </div>
        </header>
        <!-- PROFILE -->
        <div class="profile">
@@ -38,57 +39,57 @@
        <section class="groups">
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt= "Картинка вид на Карачаевск">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Карачаевск
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt= "Картинка вид на гору Эльбрус">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Гора Эльбрус
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt= "Картинка вид на Домбай">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Домбай
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt= "Картинка вид на гору Эльбрус">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Гора Эльбрус
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt= "Картинка вид на Домбай">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Домбай
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
         <div class="element">
             <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt= "Картинка вид на Карачаевск">
-            <img class="element__rectangle" src="./images/rectangle_element.svg" alt= "Рамка-прямоугольник">
             <h2 class="element__title">Карачаевск
             </h2>
-            <div class="group">
-                <img class="group__vector" src="./images/heart.svg" alt= "Сердечко">
-            </div>
+            <form class="group">
+                <button class="group__vector" type="button" name="heart" id="heart">
+                </button>
+            </form>
         </div>
        </section>
        <!-- FOOTER -->
@@ -99,22 +100,25 @@
        <section class="popup">
         <div class="popup__close-button">
             <button class="popup__close" type="button" name="close" id="close">
-                <img class="popup__vector" src="./images/popup__close_icon.svg" alt= "Иконка крестик">
             </button>
         </div>
         <div class="popup__container">
-            <div class="popup__content">
-                <h2 class="popup__title">Редактировать профиль
-                </h2>
-                <input type="text" class="popup__name" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
-                <input type="text" class="popup__profession" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
-                <img class="popup__line" src="./images/line__popup.svg" alt= "Линия">
-                <img class="popup__line" src="./images/line__popup.svg" alt= "Линия">
-                <div class="popup__button">
-                    <button class="popup__button-rectangle" type="button" name="save" id="save">Сохранить
-                    </button>
-                </div>
+            <h2 class="popup__title">Редактировать профиль
+            </h2>
+            <form class="popup__inform">
+                <fieldset class="popup__content">
+                    <input type="text" class="popup__name" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
+                    <input type="text" class="popup__profession" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
+                </fieldset>
+            </form>
+            <div class="popup__line">
             </div>
+            <div class="popup__line">
+            </div>
+            <form class="popup__button">
+                <button class="popup__button-rectangle" type="button" name="save" id="save">Сохранить
+                </button>
+            </form>
         </div>
        </section>
     </div>
