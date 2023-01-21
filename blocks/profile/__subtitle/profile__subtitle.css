@@ -18,9 +18,9 @@
     .profile__subtitle {
         font-size: 15px;
         line-height: 18px;
-        padding-left: 40px;
+        padding-left: 25px;
     }
-    }
+}
 
 @media screen and (min-width: 768px) {
     .profile__subtitle {
@@ -28,14 +28,14 @@
         line-height: 20px;
         padding-left: 0px;
     }
-    }
+}
 
 @media screen and (min-width: 1024px) {
     .profile__subtitle {
         font-size: 17px;
         line-height: 21px;
     }
-    }
+}
 
 @media screen and (min-width: 1280px) {
     .profile__subtitle {
@@ -43,4 +43,4 @@
         line-height: 22px;
         padding-right: 90px;
     }
-    }
+}

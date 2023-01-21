@@ -11,25 +11,21 @@
     .groups {
        margin: 0px auto 48px;
     }
-    }
+}
 
 @media screen and (min-width: 590px) {
     .groups {
        max-width: 584px;
        display: grid;
        grid-template-columns: 282px 282px;
-       gap: 20px;
-       margin: 0px auto 48px;
     }
-    }
+}
 
 @media screen and (min-width: 888px) {
     .groups {
        max-width: 880px;
-       display: grid;
        grid-template-columns: 282px 282px 282px;
-       row-gap: 20px;
        column-gap: 17px;
        margin-bottom: 66px;
     }
-    }
+}

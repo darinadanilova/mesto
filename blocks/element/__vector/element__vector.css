@@ -1,4 +1,4 @@
-.group__vector {
+.element__vector {
     background-image: url(../../../images/heart.svg);
     background-color: inherit;
     min-height: 19px;
@@ -9,12 +9,14 @@
     margin: 29px 20px 30px 25px;
     cursor: pointer;
     border: none;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.group__vector:hover {
+.element__vector:hover {
     opacity: 0.5;
 }
 
-.group__vector:active {
+.element__vector:active {
     background: #000000;
 }

@@ -1,33 +1,33 @@
 .header__logo {
-    max-width: 103.74px;
-    margin: 0px 0px 31.6px 27px;
-    padding: 0px;
+  max-width: 103.74px;
+  margin: 0px 0px 31.6px 27px;
+  padding: 0px;
 }
 
 @media screen and (min-width: 540px) {
-    .header__logo {
-      max-width: 110px;
-      margin: 0px 0px 33px 0px;
-    }
-    }
+  .header__logo {
+    max-width: 110px;
+    margin: 0px 0px 33px 0px;
+  }
+}
 
 @media screen and (min-width: 768px) {
-    .header__logo {
-      max-width: 120px;
-      margin: 0px 0px 35px 0px;
-    }
-    }
+  .header__logo {
+    max-width: 120px;
+    margin: 0px 0px 35px 0px;
+  }
+}
 
 @media screen and (min-width: 1024px) {
-    .header__logo {
-      max-width: 130px;
-      margin: 0px 0px 38px 0px;
-    }
-    }
+  .header__logo {
+    max-width: 130px;
+    margin: 0px 0px 38px 0px;
+  }
+}
 
 @media screen and (min-width: 1280px) {
-    .header__logo {
-      max-width: 142px;
-      margin: 0px 0px 41px 0px;
-    }
-    }
+  .header__logo {
+    max-width: 142px;
+    margin: 0px 0px 41px 0px;
+  }
+}

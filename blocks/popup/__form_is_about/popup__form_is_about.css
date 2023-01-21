@@ -1,4 +1,4 @@
-.popup__profession {
+.popup__form_is_about {
     max-width: 238px;
     min-height: 27px;
     z-index: 4;
@@ -11,18 +11,17 @@
     padding: 0px;
     margin: 0px;
     border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 @media screen and (min-width: 768px) {
-    .popup__profession {
+    .popup__form_is_about {
         min-width: 358px;
-        margin: 0px 0px 0px 13px;
     }
-    }
+}
 
 @media screen and (min-width: 1280px) {
-    .popup__profession {
-        margin: 0px 0px 148px 36px;
+    .popup__form_is_about {
         min-height: 30px;
     }
-    }
+}

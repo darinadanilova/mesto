@@ -1,11 +1,12 @@
 .header {
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    margin: 28px 0px 42px 0px;
-    padding: 0px;
-    align-content: center;
-    box-sizing: border-box;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: 28px 0px 42px 0px;
+  padding: 0px;
+  align-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(84,84,84,0.7);
 }
 
 @media screen and (min-width: 321px) {
@@ -13,11 +14,11 @@
     max-width: 100%;
     margin: 28px auto 42px;
   }
-  }
+}
 
 @media screen and (min-width: 888px) {
   .header {
     max-width: 880px;
-    margin: 45px auto 40px;
+    margin: 45px auto 22px;
   }
-  }
+}

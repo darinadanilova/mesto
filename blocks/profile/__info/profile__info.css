@@ -13,42 +13,36 @@
 @media screen and (min-width: 540px) {
     .profile__info {
         max-width: 500px;
-        grid-template-columns: 250px 34px;
-        grid-template-rows: auto auto;
+        grid-template-columns: 240px 30px;
         column-gap: 12px;
         row-gap: 14px;
     }
-    }
+ }
 
 @media screen and (min-width: 768px) {
     .profile__info {
         max-width: 316px;
         grid-template-columns: 265px 30px;
-        grid-template-rows: auto auto;
         column-gap: 14px;
         row-gap: 16px;
     }
-    }
+}
 
 @media screen and (min-width: 1024px) {
     .profile__info {
         max-width: 327px;
         grid-template-columns: 280px 27px;
-        grid-template-rows: auto auto;
         column-gap: 16px;
-        row-gap: 16px;
     }
-    }
+}
+
 @media screen and (min-width: 1280px) {
     .profile__info {
         max-width: 336px;
         grid-template-columns: 294px 24px;
-        grid-template-rows: auto auto;
         column-gap: 18px;
         row-gap: 6px;
         margin-left: 0px;
-        margin-top: 0px;
-        padding-top: 0px;
-        margin-bottom: 55px;
+        margin-bottom: 40px;
     }
-    }
+}

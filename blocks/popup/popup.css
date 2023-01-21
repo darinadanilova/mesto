@@ -7,8 +7,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    margin: 0px;
+    margin-top: 123px;
     padding: 0px;
     z-index: 3;
     display: none;
+}
+
+@media screen and (min-width: 1280px) {
+    .popup {
+        margin-top: 108px;
+    }
 }

@@ -20,9 +20,9 @@
         min-width: 225px;
         font-size: 30px;
         line-height: 37px;
-        padding-left: 40px;
+        padding-left: 25px;
     }
-    }
+}
 
 @media screen and (min-width: 768px) {
     .profile__title {
@@ -31,7 +31,7 @@
         line-height: 41px;
         padding-left: 0px;
     }
-    }
+}
 
 @media screen and (min-width: 1024px) {
     .profile__title {
@@ -39,7 +39,7 @@
         font-size: 38px;
         line-height: 44px;
     }
-    }
+}
 
 @media screen and (min-width: 1280px) {
     .profile__title {
@@ -47,4 +47,4 @@
         font-size: 42px;
         line-height: 48px;
     }
-    }
+}

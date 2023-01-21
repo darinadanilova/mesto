@@ -12,115 +12,102 @@
        <!-- HEADER -->
        <header class="header">
         <img class="header__logo" src="./images/logo_header.svg" alt= "Лого Mesto Russia">
-        <div class="header__line">
-        </div>
        </header>
-       <!-- PROFILE -->
-       <div class="profile">
+       <main>
+        <!-- PROFILE -->
+        <section class="profile">
             <img class="profile__avatar-image" src="./images/image.jpg" alt= "Фото мужчины">
         <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто
-            </h1> 
-            <div class="edit">
-                <button class="edit__button-rectangle" type="button" name="edit" id="edit">
-                    <img class="edit__button-vector" src="./images/pencil_profile.svg" alt= "Карандаш">
-                </button>
-            </div>
+            </h1>
+            <button class="profile__button-rectangle" aria-label="Edit" type="button" name="edit" id="edit">
+            </button>
             <p class="profile__subtitle">Исследователь океана
             </p>
-        </div> 
-        <div class="add">
-            <button class="add__button-rectangle" type="button" name="add" id="add">
-                <img class="add__button-vector" src="./images/plus_profile.svg" alt= "Плюс">
+        </div>
+            <button class="profile__button-vector" aria-label="Add" type="button" name="add" id="add">
             </button>
-        </div>  
-       </div>
+    </section>
        <!-- GROUPS -->
        <section class="groups">
-        <div class="element">
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt= "Картинка вид на Карачаевск">
             <h2 class="element__title">Карачаевск
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt= "Картинка вид на гору Эльбрус">
             <h2 class="element__title">Гора Эльбрус
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart1">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt= "Картинка вид на Домбай">
             <h2 class="element__title">Домбай
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart2">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt= "Картинка вид на гору Эльбрус">
             <h2 class="element__title">Гора Эльбрус
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart3">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt= "Картинка вид на Домбай">
             <h2 class="element__title">Домбай
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart4">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
             <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt= "Картинка вид на Карачаевск">
             <h2 class="element__title">Карачаевск
             </h2>
-            <form class="group">
-                <button class="group__vector" type="button" name="heart" id="heart5">
+            <form>
+                <button class="element__vector" aria-label="Like" type="button" name="heart">
                 </button>
             </form>
-        </div>
+        </article>
        </section>
+       </main>
        <!-- FOOTER -->
        <footer class="footer">
-            <img class="footer__logo" src="./images/logo_footer.svg" alt= "Лого 2020 Mesto Russia">
+            <p class="footer__logo">© 2020 Mesto Russia
+            </p>
        </footer>
        <!-- POPUP -->
-       <section class="popup">
-        <div class="popup__close-button">
-            <button class="popup__close" type="button" name="close" id="close">
-            </button>
-        </div>
+       <div class="popup">
         <div class="popup__container">
+            <button class="popup__close" aria-label="Close" type="button" name="close" id="close">
+            </button>
             <h2 class="popup__title">Редактировать профиль
             </h2>
-            <form class="popup__inform">
+            <form class="popup__inform" name="information">
                 <fieldset class="popup__content">
-                    <input type="text" class="popup__name" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
-                    <input type="text" class="popup__profession" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
+                    <input type="text" class="popup__form popup__form_is_about" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
+                    <input type="text" class="popup__form popup__form_is_about" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
                 </fieldset>
             </form>
-            <div class="popup__line">
-            </div>
-            <div class="popup__line">
-            </div>
-            <form class="popup__button">
-                <button class="popup__button-rectangle" type="button" name="save" id="save">Сохранить
+                <button class="popup__button-rectangle" aria-label="Save" type="submit" name="save" id="save">Сохранить
                 </button>
-            </form>
         </div>
-       </section>
+    </div>
     </div>
     <script src="./scripts/index.js">
     </script> 

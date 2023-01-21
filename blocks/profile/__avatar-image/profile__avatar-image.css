@@ -1,9 +1,9 @@
 .profile__avatar-image {
     width: 100%;
     max-width: 120px;
-    margin: 0px 80px 26px 82px;
+    margin: 0px 80px 23px 82px;
     padding: 0px;
-    border-radius: 60px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -11,22 +11,20 @@
     .profile__avatar-image {
         margin: 0px auto 32px;
     }
-    }
+}
 
 @media screen and (min-width: 768px) {
     .profile__avatar-image {
         max-width: 160px;
-        border-radius: 80px;
         margin: 0px 0px 39px 0px;
     }
-    }
+}
     
 @media screen and (min-width: 1280px) {
     .profile__avatar-image {
-        margin: 0px 30px 51px 0px;
-        width: 100%;
+        margin: 20px 28px 51px 0px;
         max-width: 120px;
-        border-radius: 60px;
-        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
-    }
+}

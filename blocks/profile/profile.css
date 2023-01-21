@@ -1,37 +1,36 @@
 .profile {
-    max-width: 282px;
-    margin: 0px 19px 30px;
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    align-content: center;
-    box-sizing: border-box;
+  max-width: 282px;
+  margin: 0px 19px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  align-content: center;
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 321px) {
-    .profile {
-      margin: 0px auto 36px;
-    }
-    }
+  .profile {
+    margin: 0px auto 36px;
+  }
+}
 
 @media screen and (min-width: 768px) {
-    .profile {
-      display: flex;
-      flex-direction: row;
-      max-width: 660px;
-      margin: 0px auto 40px;
-    }
-    }
+  .profile {
+    flex-direction: row;
+    max-width: 660px;
+    margin: 0px auto 40px;
+  }
+}
 
 @media screen and (min-width: 888px) {
-    .profile {
-      max-width: 880px;
-      margin: 0px auto 51px;
-    }
-    }
+  .profile {
+    max-width: 880px;
+    margin: 0px auto 51px;
+  }
+}
 
-    @media screen and (min-width: 1280px) {
-      .profile {
-        margin-bottom: 0px;
-      }
-      }
+  @media screen and (min-width: 1280px) {
+    .profile {
+      margin-bottom: 0px;
+    }
+  }

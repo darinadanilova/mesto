@@ -2,21 +2,17 @@
     max-width: 282px;
     margin: 0px auto 36px;
     padding: 0px;
-    justify-self: flex-start;
 }
 
 @media screen and (min-width: 590px) {
     .footer {
         max-width: 584px;
-        margin: 0px auto 36px;
-        justify-self: flex-start;
     }
-    }
+}
     
 @media screen and (min-width: 888px) {
     .footer {
         max-width: 880px;
         margin: 0px auto 60px;
-        justify-self: flex-start;
     }
-    }
+}
