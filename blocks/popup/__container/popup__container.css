@@ -4,7 +4,7 @@
     background: #fff;
     box-shadow: 0 4px rgb(0 0 0 / 25%);
     border-radius: 10px;
-    margin: 16px auto;
+    margin: 0px;
     padding: 0px;
     position: relative;
     align-self: center;
@@ -14,12 +14,5 @@
 @media screen and (min-width: 768px) {
     .popup__container {
         max-width: 430px;
-        margin: 60px auto;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .popup__container {
-        margin: 88px 425px;
     }
 }

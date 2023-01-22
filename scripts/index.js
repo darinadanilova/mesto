@@ -5,20 +5,20 @@ let nameInput = document.getElementById('name');
 let jobInput = document.getElementById('profession');
 let nameProfile = document.querySelector('.profile__title');
 let jobProfile = document.querySelector('.profile__subtitle');
-const formElement = document.querySelector('.popup__button-rectangle');
+const formElement = document.querySelector('.popup__save');
 
 //Открытие попапа через кнопку редактирования:
 
 const openPopup = function() {
-    popupElement.classList.add('popup__is_opened');
-    nameProfile.textContent = nameInput.value;
-    jobProfile.textContent = jobInput.value;
+    popupElement.classList.add('popup_opened');
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
  }
 
  //Закрытие попапа через крестик:
 
  const closePopup = function() {
-    popupElement.classList.remove('popup__is_opened');
+    popupElement.classList.remove('popup_opened');
  }
 
 
@@ -37,8 +37,8 @@ function handleFormSubmit (evt) {
    // Выберите элементы, куда должны быть вставлены значения полей
 
    // Вставьте новые значения с помощью textContent
-   nameInput.value = nameProfile.textContent;
-   jobInput.value = jobProfile.textContent;
+   nameProfile.textContent = nameInput.value;
+   jobProfile.textContent = jobInput.value;
    closePopup();
 }
 

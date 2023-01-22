@@ -10,27 +10,27 @@
 
 @media screen and (min-width: 321px) {
   .profile {
-    margin: 0px auto 36px;
+      margin: 0px auto 36px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .profile {
-    flex-direction: row;
-    max-width: 660px;
-    margin: 0px auto 40px;
+      flex-direction: row;
+      max-width: 660px;
+      margin: 0px auto 40px;
   }
 }
 
 @media screen and (min-width: 888px) {
   .profile {
-    max-width: 880px;
-    margin: 0px auto 51px;
+      max-width: 880px;
+      margin: 0px auto 51px;
   }
 }
 
-  @media screen and (min-width: 1280px) {
-    .profile {
+@media screen and (min-width: 1280px) {
+  .profile {
       margin-bottom: 0px;
-    }
   }
+}

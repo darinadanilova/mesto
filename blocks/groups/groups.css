@@ -9,23 +9,23 @@
 
 @media screen and (min-width: 321px) {
     .groups {
-       margin: 0px auto 48px;
+        margin: 0px auto 48px;
     }
 }
 
 @media screen and (min-width: 590px) {
     .groups {
-       max-width: 584px;
-       display: grid;
-       grid-template-columns: 282px 282px;
+        max-width: 584px;
+        display: grid;
+        grid-template-columns: 282px 282px;
     }
 }
 
 @media screen and (min-width: 888px) {
     .groups {
-       max-width: 880px;
-       grid-template-columns: 282px 282px 282px;
-       column-gap: 17px;
-       margin-bottom: 66px;
+        max-width: 880px;
+        grid-template-columns: 282px 282px 282px;
+        column-gap: 17px;
+        margin-bottom: 66px;
     }
 }

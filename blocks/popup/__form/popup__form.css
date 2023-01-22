@@ -1,8 +1,8 @@
-.popup__form_is_about {
+.popup__form {
     max-width: 238px;
     min-height: 27px;
     z-index: 4;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -11,17 +11,17 @@
     padding: 0px;
     margin: 0px;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 768px) {
-    .popup__form_is_about {
+    .popup__form {
         min-width: 358px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .popup__form_is_about {
+    .popup__form {
         min-height: 30px;
     }
 }

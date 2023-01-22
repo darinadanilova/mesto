@@ -22,9 +22,12 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__button-rectangle/popup__button-rectangle.css);
 @import url(../blocks/popup/__close/popup__close.css);
-@import url(../blocks/popup/__inform/popup__inform.css);
-@import url(../blocks/popup/__form_is_about/popup__form_is_about.css);
-@import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__is_opened/popup__is_opened.css);
 @import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__form_input_name/popup__form_input_name.css);
+@import url(../blocks/popup/__form_input_profession/popup__form_input_profession.css);
+@import url(../blocks/popup/__inform/popup__inform.css);
+@import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/_opened/popup_opened.css);

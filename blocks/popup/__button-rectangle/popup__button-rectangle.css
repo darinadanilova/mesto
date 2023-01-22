@@ -6,13 +6,13 @@
     z-index: 4;
     margin: 47px 22px 25px 22px;
     padding: 0px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor: pointer;
     border: none;
 }
@@ -25,8 +25,8 @@
     .popup__button-rectangle {
         align-self: center;
         margin: 0px 36px 37px 36px;
-        padding: 0px;
         min-width: 358px;
+        min-height: 50px;
         font-size: 18px;
         line-height: 22px;
     }

@@ -10,7 +10,7 @@
         max-width: 584px;
     }
 }
-    
+
 @media screen and (min-width: 888px) {
     .footer {
         max-width: 880px;

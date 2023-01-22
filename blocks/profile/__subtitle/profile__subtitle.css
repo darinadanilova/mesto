@@ -1,12 +1,12 @@
 .profile__subtitle {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
     align-self: center;
-    color: #FFFFFF;
+    color: #ffffff;
     padding-left: 46px;
     margin: 0px;
     text-overflow: ellipsis;
