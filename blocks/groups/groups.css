@@ -15,13 +15,13 @@
 
 @media screen and (min-width: 590px) {
     .groups {
-        max-width: 584px;
+        max-width: 580px;
         display: grid;
-        grid-template-columns: 282px 282px;
+        grid-template-columns: 280px 280px;
     }
 }
 
-@media screen and (min-width: 888px) {
+@media screen and (min-width: 895px) {
     .groups {
         max-width: 880px;
         grid-template-columns: 282px 282px 282px;
