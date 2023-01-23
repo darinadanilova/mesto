@@ -5,7 +5,7 @@ let nameInput = document.getElementById('name');
 let jobInput = document.getElementById('profession');
 let nameProfile = document.querySelector('.profile__title');
 let jobProfile = document.querySelector('.profile__subtitle');
-const formElement = document.querySelector('.popup__save');
+const formElement = document.querySelector('.popup__inform');
 
 //Открытие попапа через кнопку редактирования:
 

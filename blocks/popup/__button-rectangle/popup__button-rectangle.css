@@ -4,7 +4,7 @@
     background: #000000;
     border-radius: 2px;
     z-index: 4;
-    margin: 47px 22px 25px 22px;
+    margin: 47px 0px 25px 0px;
     padding: 0px;
     font-family: "Inter", Arial, sans-serif;
     font-style: normal;
@@ -24,7 +24,7 @@
 @media screen and (min-width: 768px) {
     .popup__button-rectangle {
         align-self: center;
-        margin: 0px 36px 37px 36px;
+        margin: 48px 0px 0px 0px;
         min-width: 358px;
         min-height: 50px;
         font-size: 18px;

@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (min-width: 590px) {
+@media screen and (min-width: 599px) {
     .groups {
         max-width: 580px;
         display: grid;
