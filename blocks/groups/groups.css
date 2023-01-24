@@ -13,7 +13,7 @@
     }
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 620px) {
     .groups {
         max-width: 580px;
         display: grid;
@@ -21,7 +21,7 @@
     }
 }
 
-@media screen and (min-width: 895px) {
+@media screen and (min-width: 900px) {
     .groups {
         max-width: 880px;
         grid-template-columns: 282px 282px 282px;
