@@ -12,16 +12,16 @@ const formeditElement = popupeditElement.querySelector('.popup__inform');
 //Открытие попапа через кнопку редактирования:
 
 const openPopupedit = function() {
-    popupeditElement.classList.add('popup_opened');
-    nameInput.value = nameProfile.textContent;
-    jobInput.value = jobProfile.textContent;
- }
+  popupeditElement.classList.add('popup_opened');
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
+  }
 
  //Закрытие попапа через крестик:
 
  const closePopupedit = function() {
-    popupeditElement.classList.remove('popup_opened');
- }
+  popupeditElement.classList.remove('popup_opened');
+  }
 
 
 popupeditOpenButtonElement.addEventListener('click', openPopupedit);
@@ -30,48 +30,15 @@ popupeditCloseButtonElement.addEventListener('click', closePopupedit);
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function handleFormeditSubmit (evt) {
-   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                               // Так мы можем определить свою логику отправки.
-                                               // О том, как это делать, расскажем позже.
-
-   // Получите значение полей jobInput и nameInput из свойства value
-
-   // Выберите элементы, куда должны быть вставлены значения полей
-
-   // Вставьте новые значения с помощью textContent
-   nameProfile.textContent = nameInput.value;
-   jobProfile.textContent = jobInput.value;
-   closePopupedit();
+  evt.preventDefault();
+  nameProfile.textContent = nameInput.value;
+  jobProfile.textContent = jobInput.value;
+  closePopupedit();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formeditElement.addEventListener('submit', handleFormeditSubmit); 
-
-
-//ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КАРТИНКУ:
-
-const popupimgElement = document.querySelector('.popup_open');
-const popupimgCloseButtonElement = popupimgElement.querySelector('.popup__close');
-const popupimgOpenButtonElement = document.querySelector('.element__image');
-
-//Открытие попапа через картинку:
-
-const openPopupimg = function() {
-    popupimgElement.classList.add('popup_opened');
- }
-
- //Закрытие попапа через крестик:
-
- const closePopupimg = function() {
-    popupimgElement.classList.remove('popup_opened');
- }
-
-
-popupimgOpenButtonElement.addEventListener('click', openPopupimg);
-popupimgCloseButtonElement.addEventListener('click', closePopupimg);
-
-
 
 
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ ДОБАВЛЕНИЯ
@@ -88,130 +55,119 @@ const formaddElement = popupaddElement.querySelector('.popup__inform');
 //Открытие попапа через кнопку добавления:
 
 const openPopupadd = function() {
-    popupaddElement.classList.add('popup_opened');
-    placeInput.value = nameElement.textContent;
-    linkInput.value = imageElement.textContent;
- }
+  popupaddElement.classList.add('popup_opened');
+}
 
  //Закрытие попапа через крестик:
 
- const closePopupadd = function() {
-    popupaddElement.classList.remove('popup_opened');
- }
-
+const closePopupadd = function() {
+  popupaddElement.classList.remove('popup_opened');
+}
 
 popupaddOpenButtonElement.addEventListener('click', openPopupadd);
 popupaddCloseButtonElement.addEventListener('click', closePopupadd);
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function handleFormaddSubmit (evt) {
-   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                               // Так мы можем определить свою логику отправки.
-                                               // О том, как это делать, расскажем позже.
 
-   // Получите значение полей jobInput и nameInput из свойства value
-
-   // Выберите элементы, куда должны быть вставлены значения полей
-
-   // Вставьте новые значения с помощью textContent
-   nameElement.textContent = placeInput.value;
-   imageElement.textContent = linkInput.value;
-   closePopupadd();
-}
-
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-formaddElement.addEventListener('submit', handleFormaddSubmit); 
-
-
-
-
-
-
+//Готовый массив карточек:
 
 const initialCards = [
-   {
-     name: 'Архыз',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-   },
-   {
-     name: 'Челябинская область',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-   },
-   {
-     name: 'Иваново',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-   },
-   {
-     name: 'Камчатка',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-   },
-   {
-     name: 'Холмогорский район',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-   },
-   {
-     name: 'Байкал',
-     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-   }
- ];
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 
 
- const cardsList = document.querySelector('.elements');
- const form = document.querySelector('.popup__inform');
-const input = document.querySelector('.popup__form_input_place');
-const inputs = document.querySelector('.popup__form_input_link');
-const template = document.querySelector('#element-template');
-console.log(template);
- 
- const formaddSubmitHandler = (evt) => {
-   evt.preventDefault();
-   const taskName = input.value;
-   renderTask(taskName);
-   input.value = '';
- };
- 
- const createTask = (taskName) => {
-   const task = template
-     .content
-     .querySelector('.todo-item')
-     .cloneNode(true);
- 
-   const textElement =  task.querySelector('.todo-item__text');
-   textElement.textContent = taskName;
- 
-   const deleteBtn = task.querySelector('.todo-item__del');
-   deleteBtn.addEventListener('click', () => {
-     task.remove();
-   });
- 
-   const duplicateBtn = task.querySelector('.todo-item__copy');
-   duplicateBtn.addEventListener('click', () => {
-     renderTask(taskName);
-   });
- 
-   const editTodo = () => {
-     textElement.contentEditable = false;
-     textElement.removeEventListener('blur',editTodo);
-   }
- 
-   const editBtn = task.querySelector('.todo-item__edit');
-   editBtn.addEventListener('click', () => {
-     textElement.contentEditable = true;
-     textElement.focus();
-     textElement.addEventListener('blur', editTodo);
-   });
- 
-   return task;
- };
- 
- const renderTask = (taskName) => {
-   todoList.append(createTask(taskName));
- };
- 
- todos.forEach((item) => {
-   renderTask(item);
- });
- 
- form.addEventListener('submit', formSubmitHandler);
+//СОЗДАТЬ КАРТОЧКУ
+
+const CardsList = document.querySelector('.groups');
+const emptyCard = document.querySelector('#element-template');
+
+function createCard(name, link) {
+  const cardElement = emptyCard.content.cloneNode(true);
+  const cardTitle = cardElement.querySelector('.element__title');
+  const cardImage = cardElement.querySelector('.element__image');
+  cardTitle.textContent = name;
+  cardImage.src = link;
+  cardImage.alt = name;
+
+
+  //Лайк:
+
+  cardElement.querySelector('.element__vector').addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__vector_active');
+});
+
+
+//Удаление карточки:
+
+cardElement.querySelector('.element__delete').addEventListener('click', function (evt) {
+  evt.target.closest('.element').remove();
+});
+
+
+//Открытие картинки:
+
+const popupimgElement = document.querySelector('.popup_open');
+let openImg = document.querySelector('.popup__image');
+let openCaption = document.querySelector('.popup__caption');
+
+cardElement.querySelector('.element__image').addEventListener('click', function () {
+  popupimgElement.classList.add('popup_opened');
+  openImg.src = link;
+  openImg.alt = name;
+  openCaption.textContent = name;
+});
+
+return cardElement;
+};
+
+//Нажимаем на кнопку "Создать":
+
+function handleFormaddSubmit (evt) {
+  evt.preventDefault(); 
+  let newCard = createCard(placeInput.value, linkInput.value);
+  CardsList.prepend(newCard);
+  closePopupadd();
+}
+
+formaddElement.addEventListener('submit', handleFormaddSubmit); 
+
+//Добавляем карточки в верстку:
+
+initialCards.forEach(card => { 
+  let newCard = createCard(card.name, card.link);
+  CardsList.prepend(newCard);
+});
+
+
+//Закрытие попапа через крестик:
+
+const popupimgElement = document.querySelector('.popup_open');
+const popupimgCloseButtonElement = popupimgElement.querySelector('.popup__close');
+
+ const closePopupimg = function() {
+  popupimgElement.classList.remove('popup_opened');
+ }
+
+popupimgCloseButtonElement.addEventListener('click', closePopupimg);
