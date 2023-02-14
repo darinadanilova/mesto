@@ -30,8 +30,26 @@ function enableValidation(config) {
 
     addInputListeners(form, config);
     toggleButton(form, config);
+
+form.addEventListener('reset', () => {
+    // setTimeout нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать toggleButtonState
+    setTimeout(() => {
+     toggleButton(form, config);
+      }, 0); // достаточно указать 0 миллисекунд, чтобы после reset уже сработало действие
+    });
 }
 
+//Функционал скрытия ошибок валидации
+const hideInputErrors = function(inputRow, className) {
+    inputRow.classList.remove(className);
+  }
+
+//Функционал показа ошибок валидации 
+  const showInputErrors = function(inputRow, className) {
+    inputRow.classList.add(className);
+  }
+
+  
 //Сообщение с ошибкой
 
 function handleFormInput(event, config) {
@@ -40,10 +58,10 @@ function handleFormInput(event, config) {
     const errorElement = document.querySelector(`#${inputId}-error`);
 
     if (input.validity.valid) {
-        input.classList.remove(config.errorClass);
+        hideInputErrors(input, config.errorClass);
         errorElement.textContent = '';
     } else {
-        input.classList.add(config.errorClass);
+        showInputErrors(input, config.errorClass);
         errorElement.textContent = input.validationMessage;
     }
 }
@@ -68,3 +86,5 @@ function addInputListeners(form, config) {
 }
 
 enableValidation(formValidationConfig);
+
+

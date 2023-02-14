@@ -1,18 +1,19 @@
 .popup__inform {
-    padding: 71px 0px 0px 22px;
+    padding: 42px 0px 0px 22px;
     margin: 0px;
     border: none;
 }
 
 @media screen and (min-width: 768px) {
     .popup__inform {
-        padding: 54px 36px 48px 36px;
+        padding-bottom: 48px;
+        padding-left: 36px;
+        padding-right: 36px;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .popup__inform {
-        padding-top: 42px;
-        padding-bottom: 39px;
+        padding-bottom: 36px;
     }
 }

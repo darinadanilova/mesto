@@ -24,7 +24,7 @@
 @media screen and (min-width: 768px) {
     .popup__button-rectangle {
         align-self: center;
-        margin: 48px 0px 0px 0px;
+        margin: 32px 0px 0px 0px;
         min-width: 358px;
         min-height: 50px;
         font-size: 18px;
