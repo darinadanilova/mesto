@@ -186,3 +186,23 @@ initialCards.forEach(card => {
  const closePopupImg = function() {
   closePopup(popupImgElement);
  }
+
+
+//Закрытие попапа через OVERLAY:
+
+document.addEventListener( 'click', (evt) => {
+	const popup = document.querySelector('.popup_opened');
+	if(evt.target === popup) {
+    closePopup(popup);
+	}
+});
+
+
+//Закрытие попапа через ESC:
+
+document.addEventListener('keydown', function(evt) {
+	if( evt.keyCode == 27){
+    const popup = document.querySelector('.popup_opened');
+		closePopup(popup);
+	}
+});

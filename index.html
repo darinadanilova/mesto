@@ -42,10 +42,12 @@
                 </button>
                 <h2 class="popup__title">Редактировать профиль
                 </h2>
-                <form class="popup__inform" name="information">
+                <form class="popup__inform" name="information" novalidate>
                     <fieldset class="popup__content">
-                        <input type="text" class="popup__form popup__form_input_name" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
-                        <input type="text" class="popup__form popup__form_input_profession" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
+                        <input required type="text" minlength="2" maxlength="40" class="popup__form popup__form_input_name" id="name" name="name" placeholder="Имя" value="Жак-Ив Кусто">
+                        <span id="name-error" class="popup__error"></span>
+                        <input required type="text" minlength="2" maxlength="200" class="popup__form popup__form_input_profession" id="profession" name="profession" placeholder="Профессия" value="Исследователь океана">
+                        <span id="profession-error" class="popup__error"></span>
                     </fieldset>
                     <button class="popup__button-rectangle" aria-label="Save" type="submit" name="save" id="save">Сохранить
                     </button>
@@ -59,10 +61,12 @@
                 </button>
                 <h2 class="popup__title">Новое место
                 </h2>
-                <form class="popup__inform" name="informations">
+                <form class="popup__inform" name="informations" novalidate>
                     <fieldset class="popup__content">
-                        <input type="text" class="popup__form popup__form_input_place" id="place" name="place" placeholder="Название">
-                        <input type="text" class="popup__form popup__form_input_link" id="link" name="link" placeholder="Сcылка на картинку">
+                        <input type="text" minlength="2" maxlength="30" class="popup__form popup__form_input_place" id="place" name="place" placeholder="Название">
+                        <span id="place-error" class="popup__error"></span>
+                        <input type="url" class="popup__form popup__form_input_link" id="link" name="link" placeholder="Сcылка на картинку">
+                        <span id="link-error" class="popup__error"></span>
                     </fieldset>
                     <button class="popup__button-rectangle" aria-label="Create" type="submit" name="create" id="create">Создать
                     </button>
@@ -89,6 +93,8 @@
         </article>
     </template>
     <script src="./scripts/index.js">
+    </script> 
+    <script src="./scripts/validate.js">
     </script> 
 </body>
 </html>
