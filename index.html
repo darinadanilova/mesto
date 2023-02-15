@@ -63,9 +63,9 @@
                 </h2>
                 <form class="popup__inform" name="informations" novalidate>
                     <fieldset class="popup__content">
-                        <input type="text" minlength="2" maxlength="30" class="popup__form popup__form_input_place" id="place" name="place" placeholder="Название">
+                        <input required type="text" minlength="2" maxlength="30" class="popup__form popup__form_input_place" id="place" name="place" placeholder="Название">
                         <span id="place-error" class="popup__error"></span>
-                        <input type="url" class="popup__form popup__form_input_link" id="link" name="link" placeholder="Сcылка на картинку">
+                        <input required type="url" class="popup__form popup__form_input_link" id="link" name="link" placeholder="Сcылка на картинку">
                         <span id="link-error" class="popup__error"></span>
                     </fieldset>
                     <button class="popup__button-rectangle" aria-label="Create" type="submit" name="create" id="create">Создать
@@ -92,6 +92,8 @@
             <button class="element__vector"></button>
         </article>
     </template>
+    <script src="./scripts/constants.js">
+    </script>
     <script src="./scripts/index.js">
     </script>
     <script src="./scripts/validate.js">

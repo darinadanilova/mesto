@@ -27,6 +27,8 @@ const formAddElement = document.forms["informations"];
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  popup.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 //Закрытие любого попапа:
@@ -34,6 +36,27 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
+
+
+//Закрытие любого попапа через OVERLAY:
+function closePopupOverlay(evt) {
+  const popup = document.querySelector('.popup_opened');
+	if(evt.target === popup) {
+    closePopup(popup);
+	}
+}
+
+
+//Закрытие любого попапа через ESC:
+
+function closePopupEsc(evt) {
+  const numberEsc = 27;
+	if( evt.keyCode === numberEsc ) {
+    const popup = document.querySelector('.popup_opened');
+		closePopup(popup);
+	}
+}
+
 
 // Универсально навесим обработчики крестиков:
 
@@ -95,36 +118,6 @@ const closePopupAdd = function() {
 popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 
 
-//Готовый массив карточек:
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-
 //СОЗДАТЬ КАРТОЧКУ
 
 function createCard(name, link) {
@@ -174,7 +167,6 @@ function handleFormAddSubmit (evt) {
 formAddElement.addEventListener('submit', handleFormAddSubmit); 
 
 //Добавляем карточки в верстку:
-
 initialCards.forEach(card => { 
   const newCard = createCard(card.name, card.link);
   cardsList.prepend(newCard);
@@ -186,23 +178,3 @@ initialCards.forEach(card => {
  const closePopupImg = function() {
   closePopup(popupImgElement);
  }
-
-
-//Закрытие попапа через OVERLAY:
-
-document.addEventListener( 'click', (evt) => {
-	const popup = document.querySelector('.popup_opened');
-	if(evt.target === popup) {
-    closePopup(popup);
-	}
-});
-
-
-//Закрытие попапа через ESC:
-
-document.addEventListener('keydown', function(evt) {
-	if( evt.keyCode == 27){
-    const popup = document.querySelector('.popup_opened');
-		closePopup(popup);
-	}
-});
