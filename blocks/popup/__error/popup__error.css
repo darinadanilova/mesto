@@ -8,4 +8,6 @@
     color: #FF0000;
     margin-top: 0px;
     padding-top: 5px;
+    box-sizing: border-box;
+    max-height: max-content;
 }

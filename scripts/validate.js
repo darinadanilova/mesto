@@ -40,13 +40,22 @@ form.addEventListener('reset', () => {
 }
 
 //Функционал скрытия ошибок валидации
-const hideInputErrors = function(inputRow, className) {
-    inputRow.classList.remove(className);
+const hideInputErrors = function(event, config) {
+    const input = event.target;
+    const inputId = input.id;
+    const errorElement = document.querySelector(`#${inputId}-error`);
+    input.classList.remove(config.errorClass); 
+    errorElement.textContent = '';
+
   }
 
 //Функционал показа ошибок валидации 
-  const showInputErrors = function(inputRow, className) {
-    inputRow.classList.add(className);
+  const showInputErrors = function(event, config) {
+    const input = event.target;
+    const inputId = input.id;
+    const errorElement = document.querySelector(`#${inputId}-error`);
+    input.classList.add(config.errorClass);
+    errorElement.textContent = input.validationMessage;
   }
 
   
@@ -56,13 +65,10 @@ function handleFormInput(event, config) {
     const input = event.target;
     const inputId = input.id;
     const errorElement = document.querySelector(`#${inputId}-error`);
-
     if (input.validity.valid) {
-        hideInputErrors(input, config.errorClass);
-        errorElement.textContent = '';
+        hideInputErrors(event, config);
     } else {
-        showInputErrors(input, config.errorClass);
-        errorElement.textContent = input.validationMessage;
+        showInputErrors(event, config);
     }
 }
 
