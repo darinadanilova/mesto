@@ -17,10 +17,15 @@ export default class Card {
         this.title = this.elementCard.querySelector('.element__title');
         this.delete = this.elementCard.querySelector('.element__delete');
         this.like = this.elementCard.querySelector('.element__vector');
-        title.textContent = this.name;
-        image.src = this.link;
-        image.alt = this.name;
+        this.title.textContent = this.name;
+        this.image.src = this.link;
+        this.image.alt = this.name;
+        this._addEventListener();
         return this.elementCard;
+    }
+
+    _addEventListener () {
+        
     }
 
 }
