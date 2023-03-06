@@ -1,3 +1,8 @@
+ //Классы:
+ 
+
+ import Card from "./Card.js";
+
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
 const popupEditElement = document.querySelector('.popup_edit');
@@ -129,6 +134,13 @@ function createCard(name, link) {
   cardTitle.textContent = name;
   cardImage.src = link;
   cardImage.alt = name;
+  
+  const card = new Card("helloWorld", "hello", emptyCard).createCard(); 
+  console.log(card);
+
+
+
+
 
   //Лайк:
 
@@ -180,3 +192,9 @@ initialCards.forEach(card => {
  const closePopupImg = function() {
   closePopup(popupImgElement);
  }
+
+
+
+
+
+
