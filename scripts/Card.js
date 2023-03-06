@@ -6,23 +6,21 @@ export default class Card {
     }
     
     _getEmptyCard () {
-        const emptyCard = document
-        .querySelector(this.elementSelector)
-        .content
-        querySelector('.element')
-        .cloneNode(true);
-        console.log(emptyCard);
+        const emptyCard = this.elementSelector.content.cloneNode(true);
         return emptyCard;
     }
 
     createCard () {
         this.elementCard = this._getEmptyCard();
-        console.log(elementCard);
+        console.log(this.elementCard);
         this.image = this.elementCard.querySelector('.element__image');
         this.title = this.elementCard.querySelector('.element__title');
         this.delete = this.elementCard.querySelector('.element__delete');
         this.like = this.elementCard.querySelector('.element__vector');
-        return elementCard;
+        title.textContent = this.name;
+        image.src = this.link;
+        image.alt = this.name;
+        return this.elementCard;
     }
 
 }
