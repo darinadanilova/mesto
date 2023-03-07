@@ -25,7 +25,20 @@ export default class Card {
     }
 
     _addEventListener () {
-        
+          this.like.addEventListener('click', function (evt) {
+            evt.target.classList.toggle('element__vector_active');
+        });
+
+        this.delete.addEventListener('click', function (evt) {
+            evt.target.closest('.element').remove();
+          });
+
+        this.image.addEventListener('click', function () {
+          this.openPopup(popupImgElement);
+          this.openImg.src = this.link;
+          this.openImg.alt = this.name;
+          this.openCaption.textContent = this.name;
+        });
     }
 
 }
