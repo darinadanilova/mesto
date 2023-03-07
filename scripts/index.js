@@ -183,7 +183,7 @@ formAddElement.addEventListener('submit', handleFormAddSubmit);
 
 //Добавляем карточки в верстку:
 initialCards.forEach(card => { 
-  const newCard = createCard(card.name, card.link);
+  const newCard = new Card(card.name, card.link, emptyCard).createCard();
   cardsList.prepend(newCard);
 });
 
@@ -193,9 +193,5 @@ initialCards.forEach(card => {
  const closePopupImg = function() {
   closePopup(popupImgElement);
  }
-
-
-
-
 
 

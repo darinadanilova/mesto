@@ -1,3 +1,5 @@
+import {popupImgElement, openImg, openCaption, openPopup, closePopup} from './utils.js';
+
 export default class Card {
     constructor(name, link, elementSelector) {
         this.name = name,
@@ -34,11 +36,12 @@ export default class Card {
           });
 
         this.image.addEventListener('click', function () {
-          this.openPopup(popupImgElement);
-          this.openImg.src = this.link;
-          this.openImg.alt = this.name;
-          this.openCaption.textContent = this.name;
+          openPopup(popupImgElement);
+          openImg.src = this.link.bind;
+          openImg.alt = this.name.bind;
+          openCaption.textContent = this.name.bind;
         });
     }
+    
 
 }
