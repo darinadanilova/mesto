@@ -1,6 +1,6 @@
  //Классы:
  
-
+ import {openPopup, closePopup} from './utils.js';
  import Card from "./Card.js";
  //import FormValidator from "./FormValidator.js";
 
@@ -28,42 +28,6 @@ const linkInput = document.getElementById('link');
 const nameElement = document.querySelector('.element__title');
 const imageElement = document.querySelector('.element__image');
 const formAddElement = document.forms["informations"];
-
-//Открытие любого попапа:
-
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  popup.addEventListener('click', closePopupOverlay);
-  document.addEventListener('keydown', closePopupEsc);
-}
-
-//Закрытие любого попапа:
-
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  popup.removeEventListener('click', closePopupOverlay);
-  document.removeEventListener('keydown', closePopupEsc);
-}
-
-
-//Закрытие любого попапа через OVERLAY:
-function closePopupOverlay(evt) {
-  const popup = document.querySelector('.popup_opened');
-	if(evt.target === popup) {
-    closePopup(popup);
-	}
-}
-
-
-//Закрытие любого попапа через ESC:
-
-function closePopupEsc(evt) {
-  const numberEsc = 27;
-	if( evt.keyCode === numberEsc ) {
-    const popup = document.querySelector('.popup_opened');
-		closePopup(popup);
-	}
-}
 
 
 // Универсально навесим обработчики крестиков:
@@ -124,50 +88,6 @@ const closePopupAdd = function() {
 }
 
 popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
-
-
-//СОЗДАТЬ КАРТОЧКУ
-
-function createCard(name, link) {
-  const cardElement = emptyCard.content.cloneNode(true);
-  const cardTitle = cardElement.querySelector('.element__title');
-  const cardImage = cardElement.querySelector('.element__image');
-  cardTitle.textContent = name;
-  cardImage.src = link;
-  cardImage.alt = name;
-  
-  const card = new Card("helloWorld", "hello", emptyCard).createCard(); 
-  console.log(card);
-
-
-
-
-
-  //Лайк:
-
-  cardElement.querySelector('.element__vector').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('element__vector_active');
-});
-
-
-//Удаление карточки:
-
-cardElement.querySelector('.element__delete').addEventListener('click', function (evt) {
-  evt.target.closest('.element').remove();
-});
-
-
-//Открытие картинки:
-
-cardImage.addEventListener('click', function () {
-  openPopup(popupImgElement);
-  openImg.src = link;
-  openImg.alt = name;
-  openCaption.textContent = name;
-});
-
-return cardElement;
-};
 
 //Нажимаем на кнопку "Создать":
 
