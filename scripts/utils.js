@@ -1,3 +1,14 @@
+//Переменные для валидации:
+
+export const formValidationConfig = {
+  formSelector: '.popup__inform',
+  inputSelector: '.popup__form',
+  errorClass: 'popup__form_type_error',
+  buttonSelector: '.popup__button-rectangle',
+  buttonDisabledClass: 'popup__button-rectangle_disabled'
+};
+
+
 //Переменные для открытия картинки во весь экран:
 
 export const popupImgElement = document.querySelector('.popup_open');

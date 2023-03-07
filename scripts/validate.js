@@ -22,7 +22,7 @@ function enableValidation(config) {
 
 //Валидация форм
 
-    function enableFormValidation(form, config) {
+function enableFormValidation(form, config) {
     form.addEventListener('submit', disableSubmit);
     form.addEventListener('input', () => {
         toggleButton(form, config);
@@ -31,7 +31,7 @@ function enableValidation(config) {
     addInputListeners(form, config);
     toggleButton(form, config);
 
-form.addEventListener('reset', () => {
+    form.addEventListener('reset', () => {
     // setTimeout нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать toggleButtonState
     setTimeout(() => {
      toggleButton(form, config);

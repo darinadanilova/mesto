@@ -2,7 +2,8 @@
  
  import {openPopup, closePopup} from './utils.js';
  import Card from "./Card.js";
- //import FormValidator from "./FormValidator.js";
+ import {formValidationConfig} from './utils.js';
+ import FormValidator from "./FormValidator.js";
 
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
@@ -93,7 +94,7 @@ popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 
 function handleFormAddSubmit (evt) {
   evt.preventDefault(); 
-  const newCard = createCard(placeInput.value, linkInput.value);
+  const newCard = new Card(placeInput.value, linkInput.value, emptyCard).createCard();
   cardsList.prepend(newCard);
   evt.target.reset();
   closePopupAdd();
@@ -115,3 +116,8 @@ initialCards.forEach(card => {
  }
 
 
+
+const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
+formValidatorAdd.enableValidation();
+const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
+formValidatorEdit.enableValidation();

@@ -1,4 +1,4 @@
-import {popupImgElement, openImg, openCaption, openPopup, closePopup} from './utils.js';
+import {popupImgElement, openImg, openCaption, openPopup} from './utils.js';
 
 
 //СОЗДАТЬ КАРТОЧКУ
