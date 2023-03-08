@@ -10,29 +10,28 @@ export default class FormValidator {
         event.preventDefault();
     }
     
-    enableValidation(config) {
-        const formList = Array.from(document.querySelectorAll(config.formSelector));
+    enableValidation() {
+        const formList = Array.from(document.querySelectorAll(this.config.formSelector));
     
         formList.forEach((form) => {
-            _enableFormValidation(form, config);
+            this._enableFormValidation(form, this.config);
         });
     }
     
     //Валидация форм
     
     _enableFormValidation(form, config) {
-        form.addEventListener('submit', disableSubmit);
+        form.addEventListener('submit', this._disableSubmit);
         form.addEventListener('input', () => {
-            toggleButton(form, config);
+            this._toggleButton(form, config);
         });
-    
-        addInputListeners(form, config);
-        toggleButton(form, config);
+        this._addInputListeners(form, this.config);
+        this._toggleButton(form, this.config);
     
         form.addEventListener('reset', () => {
         // setTimeout нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать toggleButtonState
         setTimeout(() => {
-         toggleButton(form, config);
+        this._toggleButton(form, config);
           }, 0); // достаточно указать 0 миллисекунд, чтобы после reset уже сработало действие
         });
     }
@@ -42,7 +41,7 @@ export default class FormValidator {
         const input = event.target;
         const inputId = input.id;
         const errorElement = document.querySelector(`#${inputId}-error`);
-        input.classList.remove(config.errorClass); 
+        input.classList.remove(this.config.errorClass); 
         errorElement.textContent = '';
     
       }
@@ -52,7 +51,7 @@ export default class FormValidator {
         const input = event.target;
         const inputId = input.id;
         const errorElement = document.querySelector(`#${inputId}-error`);
-        input.classList.add(config.errorClass);
+        input.classList.add(this.config.errorClass);
         errorElement.textContent = input.validationMessage;
       }
     
@@ -64,27 +63,26 @@ export default class FormValidator {
         const inputId = input.id;
         const errorElement = document.querySelector(`#${inputId}-error`);
         if (input.validity.valid) {
-            _hideInputErrors(event, config);
+            this._hideInputErrors(event, config);
         } else {
-            _showInputErrors(event, config);
+            this._showInputErrors(event, config);
         }
     }
     
     //Делаем кнопку неактивной
     
     _toggleButton(form, config) {
-        const buttonSubmit = form.querySelector(config.buttonSelector);
+        const buttonSubmit = form.querySelector(this.config.buttonSelector);
         const isFormValid = form.checkValidity();
         buttonSubmit.disabled = !isFormValid;
-        buttonSubmit.classList.toggle(config.buttonDisabledClass, !isFormValid);
+        buttonSubmit.classList.toggle(this.config.buttonDisabledClass, !isFormValid);
     }
     
     _addInputListeners(form, config) {
-        const inputList = Array.from(form.querySelectorAll(config.inputSelector));
-    
-        inputList.forEach(function (item) {
+        const inputList = Array.from(form.querySelectorAll(this.config.inputSelector));
+        inputList.forEach((item) => {
             item.addEventListener('input', (event) => {
-                _handleFormInput(event, config)
+                this._handleFormInput(event, config);
             });
         });
     }
