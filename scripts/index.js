@@ -5,6 +5,7 @@
  import {formValidationConfig} from './utils.js';
  import FormValidator from "./FormValidator.js";
 
+ 
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
 const popupEditElement = document.querySelector('.popup_edit');
@@ -94,7 +95,7 @@ popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 
 function handleFormAddSubmit (evt) {
   evt.preventDefault(); 
-  const newCard = new Card(placeInput.value, linkInput.value, emptyCard).createCard();
+  const newCard = new Card(placeInput.value, linkInput.value, emptyCard).createCard(); //класс Card
   cardsList.prepend(newCard);
   evt.target.reset();
   closePopupAdd();
@@ -116,6 +117,7 @@ initialCards.forEach(card => {
  }
 
 
+//Валидация форм class FormValidator:
 
 const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
 formValidatorAdd.enableValidation();
