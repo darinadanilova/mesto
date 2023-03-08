@@ -103,7 +103,7 @@ function handleFormAddSubmit (evt) {
 
 formAddElement.addEventListener('submit', handleFormAddSubmit); 
 
-//Добавляем карточки в верстку:
+//Добавляем карточки в верстку class Card:
 initialCards.forEach(card => { 
   const newCard = new Card(card.name, card.link, emptyCard).createCard();
   cardsList.prepend(newCard);
