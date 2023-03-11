@@ -9,27 +9,23 @@ export default class FormValidator {
     }
     
     enableValidation() {
-        const formList = Array.from(document.querySelectorAll(this.config.formSelector));
-    
-        formList.forEach((form) => {
-            this._enableFormValidation(form, this.config);
-        });
+        this._enableFormValidation();
     }
     
     //Валидация форм
     
-    _enableFormValidation(form, config) {
-        form.addEventListener('submit', this._disableSubmit);
-        form.addEventListener('input', () => {
-            this._toggleButton(form, config);
+    _enableFormValidation() {
+        this.buttonSubmit = this.form.querySelector(this.config.buttonSelector);
+        this.form.addEventListener('input', () => {
+            this._toggleButton(this.form, this.config);
         });
-        this._addInputListeners(form, this.config);
-        this._toggleButton(form, this.config);
+        this._addInputListeners(this.form, this.config);
+        this._toggleButton(this.form, this.config);
     
-        form.addEventListener('reset', () => {
+        this.form.addEventListener('reset', () => {
         // setTimeout нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать toggleButtonState
-        this._setTimeout(() => {
-        this._toggleButton(form, config);
+        setTimeout(() => {
+        this._toggleButton(this.form, this.config);
           }, 0); // достаточно указать 0 миллисекунд, чтобы после reset уже сработало действие
         });
     }
@@ -70,10 +66,9 @@ export default class FormValidator {
     //Делаем кнопку неактивной
     
     _toggleButton(form, config) {
-        const buttonSubmit = form.querySelector(this.config.buttonSelector);
         const isFormValid = form.checkValidity();
-        buttonSubmit.disabled = !isFormValid;
-        buttonSubmit.classList.toggle(this.config.buttonDisabledClass, !isFormValid);
+        this.buttonSubmit.disabled = !isFormValid;
+        this.buttonSubmit.classList.toggle(this.config.buttonDisabledClass, !isFormValid);
     }
     
     _addInputListeners(form, config) {

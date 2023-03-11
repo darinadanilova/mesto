@@ -4,6 +4,7 @@
  import Card from "./Card.js";
  import {formValidationConfig} from './utils.js';
  import FormValidator from "./FormValidator.js";
+ import {initialCards} from "./constants.js";
 
  
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
@@ -118,6 +119,16 @@ initialCards.forEach(card => {
 
 
 //Валидация форм class FormValidator:
+
+const formList = Array.from(document.querySelectorAll(formValidationConfig.formSelector));
+    
+formList.forEach((form) => {
+  const formValidatorAdd = new FormValidator(formValidationConfig, form);
+  formValidatorAdd.enableValidation();
+  const formValidatorEdit = new FormValidator(formValidationConfig, form);
+  formValidatorEdit.enableValidation();
+});
+
 
 const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
 formValidatorAdd.enableValidation();
