@@ -18,10 +18,10 @@ const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const formEditElement = document.forms["information"];
 const popupImgElement = document.querySelector('.popup_open');
-const openImg = document.querySelector('.popup__image');
-const openCaption = document.querySelector('.popup__caption');
+const imageOpen = document.querySelector('.popup__image');
+const captionOpen = document.querySelector('.popup__caption');
 const popupImgCloseButtonElement = popupImgElement.querySelector('.popup__close');
-const cardsList = document.querySelector('.groups');
+const cardTable = document.querySelector('.groups');
 const emptyCard = document.querySelector('#element-template');
 const popupAddElement = document.querySelector('.popup_add');
 const popupAddCloseButtonElement = popupAddElement.querySelector('.popup__close');
@@ -97,7 +97,7 @@ popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 function handleFormAddSubmit (evt) {
   evt.preventDefault(); 
   const newCard = new Card(placeInput.value, linkInput.value, emptyCard).createCard(); //класс Card
-  cardsList.prepend(newCard);
+  cardTable.prepend(newCard);
   evt.target.reset();
   closePopupAdd();
 }
@@ -105,10 +105,14 @@ function handleFormAddSubmit (evt) {
 formAddElement.addEventListener('submit', handleFormAddSubmit); 
 
 //Добавляем карточки в верстку class Card:
+function createCard() {
 initialCards.forEach(card => { 
   const newCard = new Card(card.name, card.link, emptyCard).createCard();
-  cardsList.prepend(newCard);
+  cardTable.prepend(newCard);
 });
+}
+createCard();
+
 
 
 //Закрытие попапа через крестик:

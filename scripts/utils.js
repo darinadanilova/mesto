@@ -12,8 +12,8 @@ export const formValidationConfig = {
 //Переменные для открытия картинки во весь экран:
 
 export const popupImgElement = document.querySelector('.popup_open');
-export const openImg = document.querySelector('.popup__image');
-export const openCaption = document.querySelector('.popup__caption');
+export const imageOpen = document.querySelector('.popup__image');
+export const captionOpen = document.querySelector('.popup__caption');
 
 //Открытие любого попапа:
 
@@ -43,8 +43,7 @@ function closePopupOverlay(evt) {
   //Закрытие любого попапа через ESC:
   
   function closePopupEsc(evt) {
-    const numberEsc = 27;
-      if( evt.keyCode === numberEsc ) {
+      if(evt.key === 'Escape') {
       const popup = document.querySelector('.popup_opened');
           closePopup(popup);
       }

@@ -1,17 +1,17 @@
-import {popupImgElement, openImg, openCaption, openPopup} from './utils.js';
+import {popupImgElement, imageOpen, captionOpen, openPopup} from './utils.js';
 
 
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
-    constructor(name, link, elementSelector) {
+    constructor(name, link, templateSelector) {
         this.name = name,
         this.link = link,
-        this.elementSelector = elementSelector
+        this.templateSelector = templateSelector
     }
     
     _getEmptyCard () {
-        const emptyCard = this.elementSelector.content.querySelector('.element').cloneNode(true);
+        const emptyCard = this.templateSelector.content.querySelector('.element').cloneNode(true);
         return emptyCard;
     }
 
@@ -50,11 +50,9 @@ export default class Card {
 
         this.image.addEventListener('click', () => {
           openPopup(popupImgElement);
-          openImg.src = this.link;
-          openImg.alt = this.name;
-          openCaption.textContent = this.name;
+          imageOpen.src = this.link;
+          imageOpen.alt = this.name;
+          captionOpen.textContent = this.name;
         });
     }
 }
-
-

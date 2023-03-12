@@ -15,9 +15,9 @@ export default class FormValidator {
     //Валидация форм
     
     _enableFormValidation() {
+        this.inputList = Array.from(this.form.querySelectorAll(this.config.inputSelector));
         this.buttonSubmit = this.form.querySelector(this.config.buttonSelector);
         this.form.addEventListener('input', () => {
-            this._toggleButton(this.form, this.config);
         });
         this._addInputListeners(this.form, this.config);
         this._toggleButton(this.form, this.config);
@@ -55,7 +55,7 @@ export default class FormValidator {
     _handleFormInput(event, config) {
         const input = event.target;
         const inputId = input.id;
-        const errorElement = document.querySelector(`#${inputId}-error`);
+        const errorElement = this.form.querySelector(`#${inputId}-error`);
         if (input.validity.valid) {
             this._hideInputErrors(event, config);
         } else {
@@ -72,10 +72,10 @@ export default class FormValidator {
     }
     
     _addInputListeners(form, config) {
-        const inputList = Array.from(form.querySelectorAll(this.config.inputSelector));
-        inputList.forEach((item) => {
-            item.addEventListener('input', (event) => {
-                this._handleFormInput(event, config);
+        this.inputList.forEach((item) => {
+            item.addEventListener('input', (item) => {
+                this._handleFormInput(item, config);
+                this._toggleButton(this.form, this.config);
             });
         });
     }
