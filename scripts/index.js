@@ -96,7 +96,7 @@ popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 
 function handleFormAddSubmit (evt) {
   evt.preventDefault(); 
-  const newCard = new Card(placeInput.value, linkInput.value, emptyCard).createCard(); //класс Card
+  const newCard = createCard(placeInput.value, linkInput.value, emptyCard); //класс Card
   cardTable.prepend(newCard);
   evt.target.reset();
   closePopupAdd();
@@ -105,13 +105,16 @@ function handleFormAddSubmit (evt) {
 formAddElement.addEventListener('submit', handleFormAddSubmit); 
 
 //Добавляем карточки в верстку class Card:
-function createCard() {
+
 initialCards.forEach(card => { 
-  const newCard = new Card(card.name, card.link, emptyCard).createCard();
+  const newCard = createCard(card.name, card.link, emptyCard);
   cardTable.prepend(newCard);
 });
+
+function createCard(name, link, emptyCard) {
+  const newCard = new Card(name, link, emptyCard).createCard();
+  return newCard;
 }
-createCard();
 
 
 
