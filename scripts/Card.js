@@ -11,7 +11,11 @@ export default class Card {
     }
     
     _getEmptyCard () {
-        const emptyCard = this.templateSelector.content.querySelector('.element').cloneNode(true);
+        const emptyCard = document
+        .querySelector(this.templateSelector)
+        .content
+        .querySelector('.element')
+        .cloneNode(true);
         return emptyCard;
     }
 
@@ -28,6 +32,29 @@ export default class Card {
         return this.elementCard;
     }
 
+    //Лайк:
+
+    _handleLikeCard() {
+        this.like.classList.toggle('element__vector_active');
+    }
+
+    //Удаление карточки:
+
+    _handleDeleteCard() {
+        this.elementCard.remove();
+        this.elementCard = null;
+    }
+
+    //Открытие картинки:
+
+    _handleOpenImg() {
+        openPopup(popupImgElement);
+          imageOpen.src = this.link;
+          imageOpen.alt = this.name;
+          captionOpen.textContent = this.name;
+    }
+
+
         //Слушатель события:
 
     _addEventListener () {
@@ -35,24 +62,20 @@ export default class Card {
         //Лайк:
 
         this.like.addEventListener('click', () => {
-            this.like.classList.toggle('element__vector_active');
+            this._handleLikeCard();
         });
 
     
         //Удаление карточки:
 
         this.delete.addEventListener('click', () => {
-            this.elementCard.remove();
-            this.elementCard = null;
+            this._handleDeleteCard();
           });
 
         //Открытие картинки:
 
         this.image.addEventListener('click', () => {
-          openPopup(popupImgElement);
-          imageOpen.src = this.link;
-          imageOpen.alt = this.name;
-          captionOpen.textContent = this.name;
+            this._handleOpenImg();
         });
     }
 }
