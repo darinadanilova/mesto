@@ -24,20 +24,16 @@ export default class FormValidator {
     }
     
     //Функционал скрытия ошибок валидации
-    _hideInputErrors(item) {
-        const input = item.target;
-        const inputId = input.id;
-        const errorElement = document.querySelector(`#${inputId}-error`);
+    _hideInputErrors(input) {
+        const errorElement = document.querySelector(`#${input.id}-error`);
         input.classList.remove(this.config.errorClass); 
         errorElement.textContent = '';
     
       }
     
     //Функционал показа ошибок валидации 
-      _showInputErrors(item) {
-        const input = item.target;
-        const inputId = input.id;
-        const errorElement = document.querySelector(`#${inputId}-error`);
+      _showInputErrors(input) {
+        const errorElement = document.querySelector(`#${input.id}-error`);
         input.classList.add(this.config.errorClass);
         errorElement.textContent = input.validationMessage;
       }
@@ -45,13 +41,11 @@ export default class FormValidator {
       
     //Сообщение с ошибкой
     
-    _handleFormInput(item) {
-        const input = item.target;
-        const inputId = input.id;
+    _handleFormInput(input) {
         if (input.validity.valid) {
-            this._hideInputErrors(item);
+            this._hideInputErrors(input);
         } else {
-            this._showInputErrors(item);
+            this._showInputErrors(input);
         }
     }
     
@@ -65,7 +59,7 @@ export default class FormValidator {
     
     _addInputListeners() {
         this.inputList.forEach((item) => {
-            item.addEventListener('input', (item) => {
+            item.addEventListener('input', () => {
                 this._handleFormInput(item);
                 this._toggleButton();
             });
