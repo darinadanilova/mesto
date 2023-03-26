@@ -1,14 +1,14 @@
- //Классы:
+//Классы:
  
- import {openPopup, closePopup} from './utils.js';
- import Card from "./Card.js";
- import {formValidationConfig} from './utils.js';
- import FormValidator from "./FormValidator.js";
- import {initialCards} from "./constants.js";
- import Section from "./Section.js";
- import Popup from "./Popup.js";
- import PopupWithImage from "./PopupWithImage.js";
- 
+import {openPopup, closePopup} from './utils.js';
+import Card from "./Card.js";
+import {formValidationConfig} from './utils.js';
+import FormValidator from "./FormValidator.js";
+import {initialCards} from "./constants.js";
+import Section from "./Section.js";
+import Popup from "./Popup.js";
+import PopupWithImage from "./PopupWithImage.js";
+
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
 const popupEditElement = document.querySelector('.popup_edit');
@@ -31,7 +31,7 @@ const popupAddOpenButtonElement = document.querySelector('.profile__button-vecto
 const placeInput = document.getElementById('place');
 const linkInput = document.getElementById('link');
 const nameElement = document.querySelector('.element__title');
-const imageElement = document.querySelector('.element__image');
+const imageElement = document.querySelector('.element_image');
 const formAddElement = document.forms["informations"];
 
 
@@ -41,25 +41,25 @@ const formAddElement = document.forms["informations"];
 const closeButtons = document.querySelectorAll('.popup__close');
 
 closeButtons.forEach((button) => {
-  // находим 1 раз ближайший к крестику попап 
-  const popup = button.closest('.popup');
-  // устанавливаем обработчик закрытия на крестик
-  button.addEventListener('click', () => closePopup(popup));
+ // находим 1 раз ближайший к крестику попап 
+ const popup = button.closest('.popup');
+ // устанавливаем обработчик закрытия на крестик
+ button.addEventListener('click', () => closePopup(popup));
 });
 
 //Открытие попапа через кнопку редактирования:
 
 const openPopupEdit = function() {
-  openPopup(popupEditElement);
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
-  }
+ openPopup(popupEditElement);
+ nameInput.value = nameProfile.textContent;
+ jobInput.value = jobProfile.textContent;
+ }
 
- //Закрытие попапа через крестик:
+//Закрытие попапа через крестик:
 
- const closePopupEdit = function() {
-  closePopup(popupEditElement);
-  }
+const closePopupEdit = function() {
+ closePopup(popupEditElement);
+ }
 
 
 popupEditOpenButtonElement.addEventListener('click', openPopupEdit);
@@ -107,12 +107,6 @@ function handleFormAddSubmit (evt) {
 formAddElement.addEventListener('submit', handleFormAddSubmit); 
 
 //Добавляем карточки в верстку class Card:
-
-initialCards.forEach(card => { 
-  const newCard = createCard(card.name, card.link, '#element-template');
-  cardTable.prepend(newCard);
-});
-
 function createCard(name, link, emptyCard) {
   const newCard = new Card(name, link, emptyCard).createCard();
   return newCard;
@@ -123,13 +117,12 @@ function renderCard(name, link, emptyCard) {
   cardTable.prepend(createCard(name, link, emptyCard));
 }
 
-
 const section = new Section({
   items: initialCards,
-  renderer: (item) => {
-    section.addItem(createCard(item));
-    },
+  renderer: renderCard
 }, '#element-template');
+
+section.renderItems();
 
 
 
@@ -162,8 +155,6 @@ formValidatorEdit.enableValidation();
 
 const img = new PopupWithImage(imageElement);
 img.setEventListeners();
-
-
 
 //Экземпляр класса PopupWithForm:
 
