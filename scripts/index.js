@@ -152,8 +152,7 @@ formValidatorEdit.enableValidation();
 
 
 //Экземпляр класса PopupWithImage:
-
-const img = new PopupWithImage(imageElement);
+const img = new PopupWithImage('.popup_open_img');
 img.setEventListeners();
 
 //Экземпляр класса PopupWithForm:
