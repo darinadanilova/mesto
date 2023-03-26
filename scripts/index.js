@@ -118,6 +118,19 @@ function createCard(name, link, emptyCard) {
   return newCard;
 }
 
+//Экземпляр класса Section:
+function renderCard(name, link, emptyCard) {
+  cardTable.prepend(createCard(name, link, emptyCard));
+}
+
+
+const section = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    section.addItem(createCard(item));
+    },
+}, '#element-template');
+
 
 
 //Закрытие попапа через крестик:
@@ -145,32 +158,11 @@ const formValidatorEdit = new FormValidator(formValidationConfig, formEditElemen
 formValidatorEdit.enableValidation();
 
 
-//Экземпляр класса Section:
-
-const section = new Section({
-  items: initialCards,
-  renderer: (item) => {
-    section.addItem(createCard(item));
-    },
-}, '.groups');
-
-
-//Экземпляр класса Popup:
-
-const popupAll = new Popup({
-
-}
-
-)
-
-
 //Экземпляр класса PopupWithImage:
 
-const img = new PopupWithImage({
+const img = new PopupWithImage(imageElement);
+img.setEventListeners();
 
-}
-
-)
 
 
 //Экземпляр класса PopupWithForm:
