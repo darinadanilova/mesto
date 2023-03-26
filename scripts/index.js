@@ -5,7 +5,9 @@
  import {formValidationConfig} from './utils.js';
  import FormValidator from "./FormValidator.js";
  import {initialCards} from "./constants.js";
-
+ import Section from "./Section.js";
+ import Popup from "./Popup.js";
+ import PopupWithImage from "./PopupWithImage.js";
  
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
@@ -141,3 +143,49 @@ const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement)
 formValidatorAdd.enableValidation();
 const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
 formValidatorEdit.enableValidation();
+
+
+//Экземпляр класса Section:
+
+const section = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    section.addItem(createCard(item));
+    },
+}, '.groups');
+
+
+//Экземпляр класса Popup:
+
+const popupAll = new Popup({
+
+}
+
+)
+
+
+//Экземпляр класса PopupWithImage:
+
+const img = new PopupWithImage({
+
+}
+
+)
+
+
+//Экземпляр класса PopupWithForm:
+
+const form = new PopupWithForm({
+
+}
+
+)
+
+
+//Экземпляр класса UserInfo:
+
+const info = new UserInfo({
+
+}
+
+)
