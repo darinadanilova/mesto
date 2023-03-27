@@ -41,16 +41,17 @@ const userInfo = new UserInfo({
   jobSelector: '.profile__subtitle'
 });
 
+// экземпляр класса профиля
+const popupProfile = new PopupWithForm('.popup_edit', handleProfileFormSubmit);
+console.log(popupProfile);
+popupProfile.setEventListeners();
+
 // Функция подтверждения формы редактирования профиля
 function handleProfileFormSubmit(data) {
   userInfo.setUserInfo(data.name, data.profession);
   popupProfile.close();
 }
 
-// экземпляр класса профиля
-const popupProfile = new PopupWithForm('.popup_edit', handleProfileFormSubmit);
-console.log(popupProfile);
-popupProfile.setEventListeners();
 
 popupEditOpenButtonElement.addEventListener('click', function () {
   const userData = userInfo.getUserInfo();
@@ -63,14 +64,6 @@ popupEditOpenButtonElement.addEventListener('click', function () {
  const popupImg = new PopupWithImage('.popup_open_img');
  popupImg.setEventListeners();
 
- 
-// создание экземпляра класса PopupWithForm
-const popupEdit = new PopupWithForm('.popup_add', handleProfileFormSubmit);
-popupEdit.setEventListeners();
-
-popupAddOpenButtonElement.addEventListener('click', function () {
-  popupEdit.open();
-});
 
 //Добавляем карточки в верстку class Card:
 function createCard(name, link, emptyCard) {
@@ -79,16 +72,48 @@ function createCard(name, link, emptyCard) {
 }
 
 //Экземпляр класса Section:
-function renderCard(name, link, emptyCard) {
-  cardTable.prepend(createCard(name, link, emptyCard));
-}
 
 const section = new Section({
   items: initialCards,
   renderer: renderCard
 }, '#element-template');
 
+function renderCard(name, link, emptyCard) {
+  cardTable.prepend(createCard(name, link, emptyCard));
+}
+
 section.renderItems();
+
+
+ // Функция подтверждения формы создания карточек
+ function handleFormAddSubmit(data) {
+  renderCard(data["place"], data["link"], popupWithImage.open);
+  popupEdit.close();
+ }
+
+
+//Нажимаем на кнопку "Создать":
+
+// function handleFormAddSubmit (evt) {
+//   evt.preventDefault(); 
+//   const newCard = createCard(placeInput.value, linkInput.value, '#element-template'); //класс Card
+//   cardTable.prepend(newCard);
+//   evt.target.reset();
+//   closePopupAdd();
+// }
+
+// formAddElement.addEventListener('submit', handleFormAddSubmit); 
+
+
+// создание экземпляра класса PopupWithForm
+const popupEdit = new PopupWithForm('.popup_add', handleFormAddSubmit);
+popupEdit.setEventListeners();
+
+popupAddOpenButtonElement.addEventListener('click', function () {
+  popupEdit.open();
+});
+
+
 
 // Универсально навесим обработчики крестиков:
 
@@ -171,17 +196,17 @@ section.renderItems();
 
 //Валидация форм class FormValidator:
 
-// const formList = Array.from(document.querySelectorAll(formValidationConfig.formSelector));
-//     
-// formList.forEach((form) => {
-//   const formValidatorAdd = new FormValidator(formValidationConfig, form);
-//   formValidatorAdd.enableValidation();
-//   const formValidatorEdit = new FormValidator(formValidationConfig, form);
-//   formValidatorEdit.enableValidation();
-// });
-// 
-// 
-// const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
-// formValidatorAdd.enableValidation();
-// const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
-// formValidatorEdit.enableValidation();
+const formList = Array.from(document.querySelectorAll(formValidationConfig.formSelector));
+    
+formList.forEach((form) => {
+  const formValidatorAdd = new FormValidator(formValidationConfig, form);
+  formValidatorAdd.enableValidation();
+  const formValidatorEdit = new FormValidator(formValidationConfig, form);
+  formValidatorEdit.enableValidation();
+});
+
+
+const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
+formValidatorAdd.enableValidation();
+const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
+formValidatorEdit.enableValidation();
