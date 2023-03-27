@@ -8,7 +8,7 @@ export default class Card {
         this.name = name,
         this.link = link,
         this.templateSelector = templateSelector,
-        this._handleCardClick = handleCardClick
+        this.handleCardClick = handleCardClick
     }
     
     _getEmptyCard () {
@@ -76,7 +76,7 @@ export default class Card {
         //Открытие картинки:
 
         this.image.addEventListener('click', () => {
-            this._handleCardClick(this.name, this.link, this.name);
+            this.handleCardClick(this.name, this.link, this.name);
         });
     }
 }
