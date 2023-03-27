@@ -4,10 +4,11 @@ import {popupImgElement, imageOpen, captionOpen, openPopup} from './utils.js';
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
-    constructor(name, link, templateSelector) {
+    constructor(name, link, templateSelector, handleCardClick) {
         this.name = name,
         this.link = link,
-        this.templateSelector = templateSelector
+        this.templateSelector = templateSelector,
+        this._handleCardClick = handleCardClick
     }
     
     _getEmptyCard () {
@@ -47,12 +48,12 @@ export default class Card {
 
     //Открытие картинки:
 
-    _handleOpenImg() {
-        openPopup(popupImgElement);
-          imageOpen.src = this.link;
-          imageOpen.alt = this.name;
-          captionOpen.textContent = this.name;
-    }
+    // _handleOpenImg() {
+    //     openPopup(popupImgElement);
+    //       imageOpen.src = this.link;
+    //       imageOpen.alt = this.name;
+    //       captionOpen.textContent = this.name;
+    // }
 
 
         //Слушатель события:
@@ -75,7 +76,7 @@ export default class Card {
         //Открытие картинки:
 
         this.image.addEventListener('click', () => {
-            this._handleOpenImg();
+            this._handleCardClick(this.name, this.link, this.name);
         });
     }
 }
