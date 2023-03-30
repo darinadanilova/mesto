@@ -11,12 +11,12 @@
     <div class="page">
        <!-- HEADER -->
         <header class="header">
-            <img class="header__logo" src="./images/logo_header.svg" alt= "Лого Mesto Russia">
+            <img class="header__logo" src="<%=require('./images/logo_header.svg')%>" alt= "Лого Mesto Russia">
         </header>
         <main class="main">
         <!-- PROFILE -->
             <section class="profile">
-                <img class="profile__avatar-image" src="./images/image.jpg" alt= "Фото мужчины">
+                <img class="profile__avatar-image" src="<%=require('./images/image.jpg')%>" alt= "Фото мужчины">
                 <div class="profile__info">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
                     <button class="profile__button-rectangle" aria-label="Edit" type="button" name="edit" id="edit">
@@ -88,7 +88,5 @@
             <button class="element__vector"></button>
         </article>
     </template>
-    <script type="module" src="./scripts/index.js">
-    </script>
 </body>
 </html>
