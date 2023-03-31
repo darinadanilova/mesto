@@ -1,6 +1,3 @@
-import {popupImgElement, imageOpen, captionOpen, openPopup} from './utils.js';
-
-
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
@@ -45,16 +42,6 @@ export default class Card {
         this.elementCard.remove();
         this.elementCard = null;
     }
-
-    //Открытие картинки:
-
-    // _handleOpenImg() {
-    //     openPopup(popupImgElement);
-    //       imageOpen.src = this.link;
-    //       imageOpen.alt = this.name;
-    //       captionOpen.textContent = this.name;
-    // }
-
 
         //Слушатель события:
 
