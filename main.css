@@ -74,6 +74,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__delete/element__delete.css ***!
   \*************************************************************************************************************************************************************************/
 .element__delete{background-color:transparent;background-image:url(images/delete.823b0cf1b0b7e9cb7cad.svg);background-position:50%;background-repeat:no-repeat;border:none;cursor:pointer;grid-column:2/3;grid-row:1/2;height:19px;justify-self:end;margin:20px 20px 0 0;padding:0;width:18px;z-index:3}.element__delete:hover{opacity:.5}.element__delete:active{background:#000}
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__digital/element__digital.css ***!
+  \***************************************************************************************************************************************************************************/
+.element__digital{background-color:inherit;background-position:50%;background-repeat:no-repeat;border:none;color:#000;cursor:pointer;font-family:Inter;font-size:13px;font-style:normal;font-weight:400;grid-column:2/3;grid-row:2/3;line-height:16px;margin:44px 26px 22px 31px;min-height:13px;text-align:center;width:10px;z-index:3}
 /*!***********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__image/element__image.css ***!
   \***********************************************************************************************************************************************************************/
