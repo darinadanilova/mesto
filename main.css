@@ -61,7 +61,7 @@
 /*!*************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__vector/element__vector.css ***!
   \*************************************************************************************************************************************************************************/
-.element__vector{background-color:inherit;background-image:url(images/heart.87ed371465c7a6a1cd01.svg);background-position:50%;background-repeat:no-repeat;border:none;cursor:pointer;grid-column:2/3;grid-row:2/3;margin:29px 20px 30px 25px;min-height:19px;width:22px;z-index:3}.element__vector:hover{opacity:.5}
+.element__vector{background-color:inherit;background-image:url(images/heart.87ed371465c7a6a1cd01.svg);background-position:50%;background-repeat:no-repeat;border:none;cursor:pointer;grid-column:2/3;grid-row:2/3;margin:22px 20px 38px 25px;min-height:19px;width:22px;z-index:3}.element__vector:hover{opacity:.5}
 /*!****************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__vector/_active/element__vector_active.css ***!
   \****************************************************************************************************************************************************************************************/
