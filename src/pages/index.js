@@ -10,6 +10,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import '../pages/index.css';
+import PopupWithSubmit from "../components/PopupWithSubmit.js";
 
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
@@ -20,6 +21,7 @@ const formEditElement = document.forms["information"];
 const cardTable = document.querySelector('.groups');
 const popupAddOpenButtonElement = document.querySelector('.profile__button-vector');
 const formAddElement = document.forms["informations"];
+const popupDeleteOpenButtonElement = document.querySelector('.element__delete');
 
 //Экземпляр класса UserInfo:
 const userInfo = new UserInfo({
@@ -85,3 +87,17 @@ const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement)
 formValidatorAdd.enableValidation();
 const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
 formValidatorEdit.enableValidation();
+
+
+//Экземпляр класса PopupWithSubmit:
+const popupSubmit = new PopupWithSubmit('.popup_delete', handleFormDelete);
+popupSubmit.setEventListeners();
+
+popupDeleteOpenButtonElement.addEventListener('click', function () {
+  popupSubmit.open();
+});
+
+function handleFormDelete() {
+  _handleDeleteCard();
+  popupSubmit.close();
+}

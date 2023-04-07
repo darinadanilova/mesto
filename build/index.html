@@ -16,7 +16,11 @@
         <main class="main">
         <!-- PROFILE -->
             <section class="profile">
+                <div class="profile__container">
                 <img class="profile__avatar-image" src="images/image.5e1063afd09dc4929b37.jpg" alt= "Фото мужчины">
+                <button class="profile__button-avatar" aria-label="Edit" type="button" name="avatar" id="avatar">
+                </button>
+                </div>
                 <div class="profile__info">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
                     <button class="profile__button-rectangle" aria-label="Edit" type="button" name="edit" id="edit">
@@ -78,7 +82,33 @@
                 <p class="popup__caption"></p>
             </div>
         </div>
+    <!-- POPUP_DELETE -->
+        <div class="popup popup_delete">
+            <div class="popup__container-delete">
+                <button class="popup__close" aria-label="Close" type="button" name="close" id="closedelete">
+                </button>
+                <h2 class="popup__title">Вы уверены?
+                </h2>
+                <button class="popup__button-rectangle" aria-label="Approve" type="submit" name="approve" id="approve">Да
+                </button>
+            </div>
+        </div>
+    <!-- POPUP_AVATAR -->
+    <div class="popup popup_avatar">
+        <div class="popup__container">
+            <button class="popup__close" aria-label="Close" type="button" name="close" id="closeavatar">
+            </button>
+            <h2 class="popup__title">Обновить аватар
+            </h2>
+            <form class="popup__inform" name="avatar" novalidate>
+                    <input required type="url" class="popup__form popup__form_input_avatar" id="avatar" name="avatar" placeholder="Сcылка на фото">
+                    <span id="avatar-error" class="popup__error"></span>
+                <button class="popup__button-rectangle" aria-label="Change" type="submit" name="change" id="change">Сохранить
+                </button>
+            </form>
+        </div>
     </div>
+</div>
     <!-- TEMPLATE -->
     <template id="element-template">
         <article class="element">
@@ -86,6 +116,7 @@
             <h2 class="element__title"></h2>
             <button class="element__delete"></button>
             <button class="element__vector"></button>
+            <h3 class="element__digital"></h3>
         </article>
     </template>
 </body>

@@ -9,17 +9,11 @@
     object-fit: cover;
 }
 
-@media screen and (min-width: 321px) {
-    .profile__avatar-image {
-        margin: 0px auto 32px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .profile__avatar-image {
-        max-width: 160px;
-        min-height: 160px;
-        margin: 0px 0px 39px 0px;
+        max-width: 120px;
+        max-height: 120px;
+        margin: 39.5px 0px 39.5px 0px;
     }
 }
 
@@ -27,6 +21,6 @@
     .profile__avatar-image {
         margin: 20px 28px 51px 0px;
         max-width: 120px;
-        min-height: 120px;
+        max-height: 120px;
     }
 }
