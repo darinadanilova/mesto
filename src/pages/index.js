@@ -10,6 +10,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import '../pages/index.css';
+import Api from "../components/Api.js";
 
 //ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
 
@@ -85,3 +86,19 @@ const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement)
 formValidatorAdd.enableValidation();
 const formValidatorEdit = new FormValidator(formValidationConfig, formEditElement);
 formValidatorEdit.enableValidation();
+
+//Экземпляр класса Api:
+const api = new Api({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-62',
+  headers: {
+    'content-type': 'application/json',
+    Authorization: '0aad50e9-c4b5-4f67-8001-5116e2404bbe'
+  },
+});
+
+api.getInfoUser();
+
+const getApi = getInfoUser();
+getApi.then((data)=>{
+debugger;
+});
