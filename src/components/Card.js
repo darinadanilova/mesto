@@ -1,11 +1,18 @@
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
-    constructor(name, link, templateSelector, handleCardClick) {
-        this.name = name,
-        this.link = link,
+    constructor(data, templateSelector, userID, handleCardClick, handleDeleteCard, handleLikeCard) {
+        this.likes = data.likes,
+        this.count_likes = data.likes.length,
+        this.name = data.name,
+        this.link = data.link,
         this.templateSelector = templateSelector,
-        this.handleCardClick = handleCardClick
+        this.userID = userID,
+        this.cardID = data._id,
+        this.ownerCardID = data.owner._id,
+        this.handleCardClick = handleCardClick,
+        this.handleDeleteCard = handleDeleteCard,
+        this.handleLikeCard = handleLikeCard
     }
     
     _getEmptyCard () {
@@ -23,20 +30,42 @@ export default class Card {
         this.title = this.elementCard.querySelector('.element__title');
         this.delete = this.elementCard.querySelector('.element__delete');
         this.like = this.elementCard.querySelector('.element__vector');
+        this.countLikes = this.elementCard.querySelector('.element__digital');
+        this.countLikes.textContent = this.count_likes;
         this.title.textContent = this.name;
         this.image.src = this.link;
         this.image.alt = this.name;
+        this.elementCard.id = this.cardID;
+
+
+    //Удаление карточек:
+
+    if (this.userID !== this.ownerCardID) {
+        this.delete.style.display = 'none';
+    }
+
+
+    //Лайк:
+
+    this.likes.forEach((item) => {
+        if (item._id === this.userID) {
+            this.like.classList.add('element__vector_active');
+        }
+    })
         this._addEventListener();
         return this.elementCard;
     }
+
 
     //Лайк:
 
     _handleLikeCard() {
         this.like.classList.toggle('element__vector_active');
+
     }
 
-    //Удаление карточки:
+
+    //Удаление карточек:
 
     _handleDeleteCard() {
         this.elementCard.remove();
@@ -44,27 +73,36 @@ export default class Card {
     }
 
 
+    _checkLike() {
+        if (this.like.classList.contains('element__vector_active')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     //Слушатель события:
 
     _addEventListener () {
 
-        //Лайк:
+    //Лайк:
 
-        this.like.addEventListener('click', () => {
-            this._handleLikeCard();
-        });
+    this.like.addEventListener('click', () => {
+        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes);
+        this._handleLikeCard();
+    });
 
-    
-        //Удаление карточки:
+    //Удаление карточек:
 
-        this.delete.addEventListener('click', () => {
-            this._handleDeleteCard();
-          });
+    this.delete.addEventListener('click', () => {
+        this.handleDeleteCard(this.cardID, this._handleDeleteCard);
+    });
 
-        //Открытие картинки:
+    //Открытие картинки:
 
-        this.image.addEventListener('click', () => {
-            this.handleCardClick(this.name, this.link, this.name);
-        });
-    }
+    this.image.addEventListener('click', () => {
+        this.handleCardClick(this.name, this.link, this.name);
+    });
+        }
 }

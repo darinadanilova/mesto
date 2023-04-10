@@ -11,6 +11,10 @@
     z-index: 3;
 }
 
+.popup__container:nth-child(3n) {
+    max-width: 430px;
+}
+
 @media screen and (min-width: 768px) {
     .popup__container {
         max-width: 430px;

@@ -17,6 +17,10 @@ export default class PopupWithForm extends Popup {
         return data;
     };
 
+    loadButton(buttunSelector, text) {
+        this._popupForm.querySelector(buttunSelector).textContent = text;
+    }
+
     setEventListeners() {
         super.setEventListeners();
 
@@ -28,6 +32,7 @@ export default class PopupWithForm extends Popup {
 
     close() {
         super.close();
+
         this._popupForm.reset();
     }
 }
