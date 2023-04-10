@@ -1,6 +1,5 @@
 .profile__button-avatar {
     background-image: url(../../../images/profile_pencil.svg);
-    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 26px;
@@ -14,8 +13,6 @@
     top: -1px;
     cursor: pointer;
     border: none;
-    background-position: center;
-    background-repeat: no-repeat;
     justify-self: start;
     opacity: 0;
     transition: all 0.2s linear;
