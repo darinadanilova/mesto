@@ -65,9 +65,14 @@ export default class Card {
     }
 
 
+    _changeCountLikes(element, res) {
+        element.textContent = res.likes.length;
+    }
+
+
     //Удаление карточек:
 
-    _handleDeleteCard() {
+    handleDeleteCard() {
         this.elementCard.remove();
         this.elementCard = null;
     }
@@ -89,14 +94,14 @@ export default class Card {
     //Лайк:
 
     this.like.addEventListener('click', () => {
-        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes);
+        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes, this._changeCountLikes);
         this._handleLikeCard();
     });
 
     //Удаление карточек:
 
     this.delete.addEventListener('click', () => {
-        this.handleDeleteCard(this.cardID, this._handleDeleteCard);
+        this.handleDeleteCard(this.elementCard);
     });
 
     //Открытие картинки:

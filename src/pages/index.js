@@ -64,10 +64,19 @@ popupEditProfile.setEventListeners();
 //Редактирование профиля:
 
 function handleEditFormSubmit(data) {
+  popupEditProfile.loadButton('Сохранение...');
   api.patchInfo(data.name, data.profession)
   .then((res) => {
     userInfo.setUserInfo(res.name, res.about, res.avatar);
     popupEditProfile.close();
+  }
+  )
+  .catch((err) => {
+    console.log(err);
+  }
+  )
+  .finally(() => {
+    popupEditProfile.loadButton('Сохранить');
   }
   )
 }
@@ -76,7 +85,7 @@ function handleEditFormSubmit(data) {
 //handleAvatarFormSubmit - обработчик формы аватара:
 
 function handleAvatarFormSubmit(data) {
-  popupAvatar.loadButton('.popup__button-rectangle', 'Сохранение...');
+  popupAvatar.loadButton('Сохранение...');
   api.patchAvatar(data.avatar)
   .then((res) => {
     userInfo.setUserInfo(res.name, res.about, res.avatar);
@@ -88,7 +97,7 @@ function handleAvatarFormSubmit(data) {
   }
   )
   .finally(() => {
-    popupAvatar.loadButton('.popup__button-rectangle', 'Сохранить');
+    popupAvatar.loadButton('Сохранить');
   }
   )
 }
@@ -138,10 +147,19 @@ popupSubmit.setEventListeners();
 //Добавление карточек:
 
 function handleAddFormSubmit(data) {
+  popupAddCard.loadButton('Сохранение...');
   api.postCard(data.place, data.link)
   .then((res) => {
     renderCard(res, '.groups');
     popupAddCard.close();
+  }
+  )
+  .catch((err) => {
+    console.log(err);
+  }
+  )
+  .finally(() => {
+    popupAddCard.loadButton('Сохранить');
   }
   )
 }
@@ -149,13 +167,11 @@ function handleAddFormSubmit(data) {
 
 // Удаление карточек:
 
-function handleDeleteCard(cardId, _handleDeleteCard) {
-  console.log(cardId);
-  api.deleteCard(cardId)
-  .then(() => {
-    document.getElementById(cardId).remove();
-    popupSubmit.close();
-  }
+function handleDeleteCard(elementCard) {
+  api.deleteCard(elementCard.id)
+  .then(() => 
+    elementCard.remove(),
+    popupSubmit.close()
   )
   .catch((err) => {
     console.log(err);
@@ -165,11 +181,11 @@ function handleDeleteCard(cardId, _handleDeleteCard) {
 
 // Лайк карточки(здесь же выводим увеличение или уменьшение лайков):
 
-function handleLikeCard(cardId, isLiked, countLike) {
+function handleLikeCard(cardId, isLiked, countLike, changeCountLikes) {
   if (isLiked) {
     api.deleteLike(cardId)
     .then((res) => {
-      countLike.textContent = res.likes.length;
+      changeCountLikes(countLike, res);
     })
     .catch((err) => {
       console.log(err);
@@ -177,7 +193,7 @@ function handleLikeCard(cardId, isLiked, countLike) {
   } else {
     api.putLike(cardId)
     .then((res) => {
-      countLike.textContent = res.likes.length;
+      changeCountLikes(countLike, res);
     })
     .catch((err) => {
       console.log(err);

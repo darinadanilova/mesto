@@ -7,6 +7,7 @@ export default class PopupWithForm extends Popup {
         this._handleFormSubmit = handleFormSubmit,
         this._popupForm = this.popup.querySelector('.popup__inform'),
         this._popupFormInput = this.popup.querySelectorAll('.popup__form')
+        this._button = this.popup.querySelector('.popup__button-rectangle')
     }
 
     _getInputValues() {
@@ -17,8 +18,8 @@ export default class PopupWithForm extends Popup {
         return data;
     };
 
-    loadButton(buttunSelector, text) {
-        this._popupForm.querySelector(buttunSelector).textContent = text;
+    loadButton(text) {
+        this._button.textContent = text;
     }
 
     setEventListeners() {
