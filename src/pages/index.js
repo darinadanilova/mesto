@@ -11,18 +11,7 @@ import UserInfo from "../components/UserInfo.js";
 import '../pages/index.css';
 import PopupWithSubmit from "../components/PopupWithSubmit.js";
 import API from "../components/API.js";
-
-//ОТКРЫТИЕ ПОПАПА ЧЕРЕЗ КНОПКУ РЕДАКТИРВАНИЯ
-
-const popupEditOpenButtonElement = document.querySelector('.profile__button-rectangle');
-const nameInput = document.getElementById('name');
-const jobInput = document.getElementById('profession');
-const formEditElement = document.forms["information"];
-const formAvatarElement = document.forms["avatar"];
-const cardTable = document.querySelector('.groups');
-const popupAddOpenButtonElement = document.querySelector('.profile__button-vector');
-const formAddElement = document.forms["informations"];
-const popupDeleteOpenButtonElement = document.querySelector('.element__delete');
+import {popupEditOpenButtonElement, nameInput, jobInput, formEditElement, formAvatarElement, cardTable, popupAddOpenButtonElement, formAddElement, popupDeleteOpenButtonElement} from '../scripts/constants.js';
 
 
 //Экземпляр класса API:
