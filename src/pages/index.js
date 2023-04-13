@@ -70,10 +70,10 @@ function createCard(name, link, emptyCard) {
 }
 
 //Экземпляр класса Section:
-const section = new Section({
-  items: initialCards,
-  renderer: renderCard
-}, '#element-template');
+//const section = new Section({
+//  items: initialCards,
+//  renderer: renderCard
+//}, '#element-template');
 
 function renderCard(name, link, emptyCard) {
   cardTable.prepend(createCard(name, link, emptyCard));
@@ -96,9 +96,15 @@ const api = new Api({
   },
 });
 
-api.getInfoUser();
+api.getAllCards();
 
-const getApi = getInfoUser();
+const getApi = getAllCards();
 getApi.then((data)=>{
-debugger;
-});
+  debugger;
+  const section = new Section({
+    items: data,
+    renderer: renderCard
+  }, '#element-template');
+  section.render(page);
+})
+.catch((err)=>alert(err));
