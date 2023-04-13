@@ -1,7 +1,7 @@
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
-    constructor(data, templateSelector, userID, handleCardClick, handleDeleteCard, handleLikeCard) {
+    constructor(data, templateSelector, userID, handleCardClick, handleDeleteCard, handleLikeCard, handleDeleteLike) {
         this.likes = data.likes,
         this.count_likes = data.likes.length,
         this.name = data.name,
@@ -12,7 +12,8 @@ export default class Card {
         this.ownerCardID = data.owner._id,
         this.handleCardClick = handleCardClick,
         this.handleDeleteCard = handleDeleteCard,
-        this.handleLikeCard = handleLikeCard
+        this.handleLikeCard = handleLikeCard,
+        this.handleDeleteLike = handleDeleteLike
     }
     
     _getEmptyCard () {
@@ -56,18 +57,9 @@ export default class Card {
         return this.elementCard;
     }
 
+    _changeCountLikes = (num) => this.countLikes.textContent = num;
 
-    //Лайк:
-
-    _changeColorLikeCard(likeButton) {
-        likeButton.classList.toggle('element__vector_active');
-
-    }
-
-
-    _changeCountLikes(element, res) {
-        element.textContent = res.likes.length;
-    }
+    _changeColorLikeCard = () => this.like.classList.toggle('element__vector_active');
 
 
     //Удаление карточек:
@@ -78,23 +70,19 @@ export default class Card {
     }
 
 
-    _checkLike() {
-        if (this.like.classList.contains('element__vector_active')) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
     //Слушатель события:
 
     _addEventListener () {
 
     //Лайк:
 
-    this.like.addEventListener('click', () => {
-        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes, this._changeCountLikes, this.like, this._changeColorLikeCard);
+    this.like.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('element__vector_active')) {
+            this.handleDeleteLike(this.cardID, this._changeColorLikeCard, this._changeCountLikes);
+        }
+        else {
+            this.handleLikeCard(this.cardID, this._changeColorLikeCard, this._changeCountLikes);
+        }
     });
 
     //Удаление карточек:

@@ -179,30 +179,27 @@ function handleDeleteCard(elementCard) {
 }
 
 
-// Лайк карточки(здесь же выводим увеличение или уменьшение лайков):
+// Лайк карточки:
 
-function handleLikeCard(cardId, isLiked, countLike, changeCountLikes, likeButton, changeColorLike) {
-  if (isLiked) {
-    api.deleteLike(cardId)
+const handleLikeCard = (cardId, changeColorLikeCard, changeCountLikes) => {
+  api.putLike(cardId)
     .then((res) => {
-      changeCountLikes(countLike, res);
-      changeColorLike(likeButton);
+      changeColorLikeCard();
+      changeCountLikes(res.likes.length);
     })
-    .catch((err) => {
-      console.log(err);
-    })
-  } else {
-    api.putLike(cardId)
-    .then((res) => {
-      changeCountLikes(countLike, res);
-      changeColorLike(likeButton);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+    .catch((err) => console.log(`Ошибка: ${err}`))
 }
 
+// Удаление лайка с карточки:
+
+const handleDeleteLike = (cardId, changeColorLikeCard, changeCountLikes) => {
+  api.deleteLike(cardId)
+  .then((res) => {
+    changeColorLikeCard();
+      changeCountLikes(res.likes.length);
+    })
+    .catch((err) => console.log(`Ошибка: ${err}`))
+}
 
 const formValidatorAdd = new FormValidator(formValidationConfig, formAddElement);
 formValidatorAdd.enableValidation();
@@ -215,7 +212,7 @@ formValidatorAvatar.enableValidation();
 //Добавляем карточки в верстку class Card:
 
 function createCard(data) {
-  const newCard = new Card(data, '#element-template', userId, popupImg.open, popupSubmit.open, handleLikeCard).createCard();
+  const newCard = new Card(data, '#element-template', userId, popupImg.open, popupSubmit.open, handleLikeCard, handleDeleteLike).createCard();
   return newCard;
 }
 
