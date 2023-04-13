@@ -59,8 +59,8 @@ export default class Card {
 
     //Лайк:
 
-    _handleLikeCard() {
-        this.like.classList.toggle('element__vector_active');
+    _changeColorLikeCard(likeButton) {
+        likeButton.classList.toggle('element__vector_active');
 
     }
 
@@ -94,8 +94,7 @@ export default class Card {
     //Лайк:
 
     this.like.addEventListener('click', () => {
-        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes, this._changeCountLikes);
-        this._handleLikeCard();
+        this.handleLikeCard(this.cardID, this._checkLike(), this.countLikes, this._changeCountLikes, this.like, this._changeColorLikeCard);
     });
 
     //Удаление карточек:

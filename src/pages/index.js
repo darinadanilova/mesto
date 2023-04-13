@@ -181,11 +181,12 @@ function handleDeleteCard(elementCard) {
 
 // Лайк карточки(здесь же выводим увеличение или уменьшение лайков):
 
-function handleLikeCard(cardId, isLiked, countLike, changeCountLikes) {
+function handleLikeCard(cardId, isLiked, countLike, changeCountLikes, likeButton, changeColorLike) {
   if (isLiked) {
     api.deleteLike(cardId)
     .then((res) => {
       changeCountLikes(countLike, res);
+      changeColorLike(likeButton);
     })
     .catch((err) => {
       console.log(err);
@@ -194,6 +195,7 @@ function handleLikeCard(cardId, isLiked, countLike, changeCountLikes) {
     api.putLike(cardId)
     .then((res) => {
       changeCountLikes(countLike, res);
+      changeColorLike(likeButton);
     })
     .catch((err) => {
       console.log(err);
