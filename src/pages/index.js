@@ -96,15 +96,27 @@ const api = new Api({
   },
 });
 
-api.getAllCards();
+let user, section;
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then((res) => {
+    userInfo.setUserInfo(res[0].name, res[0].about, res[0].avatar);
+    user = res[0];
+    section = new Section({items: res[1], renderer: renderElement}, '.elements__list');
+    section.renderItems();
+  })
+  .catch((err) => console.log(`Ошибка: ${err}`))
 
-const getApi = getAllCards();
-getApi.then((data)=>{
-  debugger;
-  const section = new Section({
-    items: data,
-    renderer: renderCard
-  }, '#element-template');
-  section.render(page);
-})
-.catch((err)=>alert(err));
+
+
+//api.getAllCards();
+//
+//const getApi = getAllCards();
+//getApi.then((data)=>{
+//  debugger;
+//  const section = new Section({
+//    items: data,
+//    renderer: renderCard
+//  }, '#element-template');
+//  section.render(page);
+//})
+//.catch((err)=>alert(err));

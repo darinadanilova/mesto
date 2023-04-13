@@ -1,13 +1,21 @@
 //СОЗДАТЬ КАРТОЧКУ
 
 export default class Card {
-    constructor(name, link, templateSelector, handleCardClick) {
+    constructor(name, link, templateSelector, handleCardClick, api) {
         this.name = name,
         this.link = link,
         this.templateSelector = templateSelector,
-        this.handleCardClick = handleCardClick
+        this.handleCardClick = handleCardClick,
+        this._api = api
     }
     
+    //_saveItem = (text) => {
+    //    this._api
+    //    .addCards({name: text});
+    //    .then((data) => this._getEmptyCard(data.name))
+    //    .catch((err) => console.log(err));
+    //}
+
     _getEmptyCard () {
         const emptyCard = document
         .querySelector(this.templateSelector)
